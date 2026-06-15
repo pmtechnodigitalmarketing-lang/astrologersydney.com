@@ -1,0 +1,176 @@
+.carousel-wrapper {
+  width: 100%;
+  padding: 40px 0 20px;
+  position: relative;
+}
+
+.services-swiper {
+  width: 100%;
+  padding-bottom: 50px !important; /* Space for pagination */
+}
+
+.services-swiper .swiper-slide {
+  width: 320px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+}
+
+.services-swiper .swiper-slide-active {
+  opacity: 1;
+}
+
+.services-swiper .swiper-slide:not(.swiper-slide-active) {
+  opacity: 1;
+}
+
+.carousel-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(107, 33, 168, 0.15);
+  border-radius: 30px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-card:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: var(--color-primary);
+  box-shadow: 0 30px 60px rgba(107, 33, 168, 0.1);
+  transform: translateY(-10px);
+}
+
+.carousel-image-wrapper {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 1.5rem;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 4px solid #fff;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04), 0 0 20px rgba(107, 33, 168, 0.1);
+  background-color: var(--color-surface);
+}
+
+.carousel-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.5s ease;
+}
+
+.carousel-card:hover .carousel-image-wrapper img {
+  transform: scale(1.15);
+}
+
+.carousel-image-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle at center, rgba(107, 33, 168, 0.2) 0%, transparent 60%);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-card:hover .carousel-image-glow {
+  opacity: 1;
+  animation: slowSpin 10s linear infinite;
+}
+
+@keyframes slowSpin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.carousel-card h3 {
+  font-size: 1.4rem;
+  color: var(--color-on-surface);
+  margin-bottom: 0.8rem;
+}
+
+.carousel-desc {
+  font-size: 1rem;
+  color: var(--color-on-surface-variant);
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+
+.carousel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--color-primary);
+  font-weight: 600;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  margin-top: auto;
+}
+
+.carousel-card:hover .carousel-footer {
+  opacity: 1;
+}
+
+.learn-more-text {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+/* Swiper overrides for theme */
+.swiper-pagination-bullet {
+  background: rgba(107, 33, 168, 0.3) !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-primary) !important;
+  width: 24px !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-primary) !important;
+  background: rgba(255, 255, 255, 0.8);
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.2rem !important;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .services-swiper .swiper-slide {
+    width: 280px;
+  }
+  .carousel-card {
+    padding: 2rem 1.5rem;
+  }
+}

@@ -1,0 +1,115 @@
+.panchang-widget {
+  padding: 2rem;
+  border-radius: 12px;
+  background: rgba(20, 20, 30, 0.7);
+  border: 1px solid rgba(107, 33, 168, 0.3);
+  margin: 2rem 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.panchang-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(107, 33, 168, 0.2);
+  padding-bottom: 1.5rem;
+}
+
+.panchang-icon {
+  font-size: 3rem;
+  color: var(--color-primary);
+  text-shadow: 0 0 15px rgba(107, 33, 168, 0.5);
+  animation: pulse-glow 3s infinite alternate;
+}
+
+.panchang-title-area h3 {
+  margin: 0;
+  color: var(--color-on-surface);
+  font-size: 1.5rem;
+}
+
+.panchang-date {
+  margin: 0.2rem 0 0 0;
+  color: var(--color-tertiary);
+  font-style: italic;
+}
+
+.panchang-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.panchang-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(107, 33, 168, 0.06);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--color-secondary);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.panchang-item:hover {
+  transform: translateY(-3px);
+  background: rgba(20, 20, 30, 0.8);
+}
+
+.item-icon {
+  color: var(--color-secondary);
+  font-size: 2rem;
+}
+
+.item-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-label {
+  font-size: 0.8rem;
+  color: var(--color-variant);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.item-value {
+  font-weight: 600;
+  color: var(--color-on-surface);
+  font-size: 1.1rem;
+}
+
+.panchang-alert {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 80, 80, 0.1);
+  border: 1px solid rgba(255, 80, 80, 0.3);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.alert-icon {
+  color: #ff5050;
+  font-size: 2rem;
+}
+
+.alert-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.alert-content strong {
+  color: #ff8080;
+}
+
+.alert-content span {
+  color: #ffcccc;
+}
+
+@keyframes pulse-glow {
+  0% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(107, 33, 168, 0.5)); }
+  100% { transform: scale(1.05); filter: drop-shadow(0 0 15px rgba(107, 33, 168, 0.9)); }
+}

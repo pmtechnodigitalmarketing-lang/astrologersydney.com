@@ -1,0 +1,237 @@
+.loc-detail-page {
+  background-color: var(--color-background);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  padding-bottom: 6rem;
+}
+
+/* Background Magic */
+.loc-detail-bg-1, .loc-detail-bg-2 {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  animation: floatOrb 25s infinite ease-in-out alternate;
+}
+
+.loc-detail-bg-1 {
+  top: -10%; right: -10%; width: 60vw; height: 60vw;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, transparent 60%);
+}
+
+.loc-detail-bg-2 {
+  bottom: -10%; left: -10%; width: 50vw; height: 50vw;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, transparent 60%);
+  animation-delay: -10s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-5%, 5%) scale(1.1); }
+  100% { transform: translate(5%, -10%) scale(0.9); }
+}
+
+/* Hero Section */
+.loc-detail-hero {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 10rem 1rem 6rem;
+}
+
+.loc-detail-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: #C5A059;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.badge-line {
+  height: 1px;
+  width: 40px;
+  background-color: #C5A059;
+}
+
+.loc-detail-title {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  color: #1A1A2E;
+  margin-bottom: 1.5rem;
+  line-height: 1.15;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.loc-detail-title .italic {
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  font-family: 'Playfair Display', serif;
+}
+
+.loc-detail-title .highlight {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.loc-detail-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  color: var(--color-on-surface-variant);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Expandable Cards Grid */
+.loc-services-grid-container {
+  position: relative;
+  z-index: 20;
+  padding: 2rem 1rem 2rem;
+}
+
+.loc-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Fix motion.div height so cards stretch */
+.h-full {
+  height: 100%;
+}
+
+.loc-card-expanded-content h4 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.loc-card-expanded-content p {
+  font-family: var(--font-body);
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.loc-card-booking {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.loc-card-book-btn {
+  display: inline-block;
+  background: var(--color-primary);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.loc-card-book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(107, 33, 168, 0.2);
+}
+
+/* FAQ Section */
+.loc-detail-faq-section {
+  margin-top: 3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.loc-faq-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.loc-faq-header h2 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--color-on-surface);
+  margin-bottom: 1rem;
+}
+
+.loc-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.loc-faq-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.8);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.04);
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: transform 0.3s ease;
+}
+
+.loc-faq-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.faq-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(140, 107, 186, 0.1);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.loc-faq-card h4 {
+  font-size: 1.2rem;
+  color: var(--color-on-surface);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.loc-faq-card p {
+  color: var(--color-on-surface-variant);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .loc-detail-hero { padding: 6rem 5% 3rem; }
+  .loc-detail-title {
+    font-size: 2.2rem !important;
+    word-break: break-word;
+  }
+  .loc-detail-subtitle { font-size: 1rem !important; }
+  .loc-services-grid-container { padding-bottom: 2rem; }
+  .loc-detail-faq-section { margin-top: 3rem; }
+  .loc-faq-header { margin-bottom: 2rem; }
+}

@@ -1,0 +1,553 @@
+/* About Page Premium Overhaul */
+.about-page {
+  padding-top: 0;
+  overflow-x: hidden;
+}
+
+/* 1. Immersive Parallax Hero */
+.about-hero-section {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0b0716 0%, #1a103c 50%, #0b0716 100%);
+  overflow: hidden;
+  text-align: center;
+}
+
+.about-hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at center, rgba(236, 72, 153, 0.15) 0%, transparent 60%);
+  animation: pulse-glow 10s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.2); opacity: 1; }
+}
+
+/* Stars background for Hero */
+.stars-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 90px 40px, rgba(255,255,255,0.6), rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.5;
+  animation: drift-stars 60s linear infinite;
+}
+
+@keyframes drift-stars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.cosmic-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.about-hero-title {
+  font-size: 5.5rem;
+  font-family: var(--font-display);
+  color: #ffffff;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 1.15;
+  margin-bottom: 30px;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.about-hero-title .highlight {
+  background: linear-gradient(135deg, #c084fc, #f472b6);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: cosmic-gradient 5s ease infinite;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.about-hero-title .italic-text {
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes cosmic-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.about-hero-subtitle {
+  font-size: 1.35rem;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* 2. The Master Profile Card (Glassmorphism Overlap) */
+.master-profile-section {
+  padding: 80px 5% 20px;
+  background: #f8f7fa;
+  position: relative;
+}
+
+.master-profile-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.master-image-box {
+  flex: 0 0 45%;
+  position: relative;
+  z-index: 1;
+}
+
+.master-image-box img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+  display: block;
+}
+
+.master-image-glow {
+  position: absolute;
+  top: -20px; left: -20px; right: -20px; bottom: -20px;
+  background: linear-gradient(135deg, rgba(236,72,153,0.3), rgba(139,92,246,0.3));
+  filter: blur(40px);
+  z-index: -1;
+  border-radius: 30px;
+}
+
+.master-text-box {
+  flex: 0 0 65%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 60px;
+  border-radius: 30px;
+  margin-left: -10%; /* The Overlap Magic */
+  z-index: 2;
+  box-shadow: 0 20px 50px rgba(107,33,168,0.1);
+}
+
+.master-text-box h2 {
+  font-size: 3rem;
+  font-family: var(--font-display);
+  color: var(--color-on-surface);
+  margin-bottom: 20px;
+}
+
+.master-text-box p {
+  font-size: 1.15rem;
+  color: var(--color-on-surface-variant);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.master-extra-info {
+  margin-top: 15px;
+  padding: 15px;
+  background: rgba(139, 92, 246, 0.05);
+  border-left: 3px solid #8b5cf6;
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 20px;
+}
+
+.master-extra-info p {
+  margin-bottom: 0 !important;
+  font-size: 1.05rem !important;
+  color: var(--color-on-surface) !important;
+}
+
+.master-quote {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  border-left: 4px solid #ec4899;
+  padding-left: 20px;
+  margin-top: 30px;
+}
+
+.master-action-area {
+  margin-top: 40px;
+  text-align: left;
+}
+
+.book-consultation-btn {
+  background: linear-gradient(135deg, var(--color-primary), #8b5cf6);
+  color: white;
+  padding: 16px 40px;
+  border-radius: 30px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(107, 33, 168, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-consultation-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(107, 33, 168, 0.3);
+}
+
+/* 3. Cosmic Journey (Sticky Stacked Cards) */
+.cosmic-journey-section {
+  padding: 20px 5% 0px;
+  background: linear-gradient(to bottom, #f8f7fa, #ffffff);
+  position: relative;
+  color: var(--color-on-surface);
+  overflow-x: clip; /* Prevent horizontal scroll, keep sticky working */
+}
+
+/* Decorative floating orbs for empty space */
+.cosmic-journey-section::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: -15%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(236,72,153,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+  animation: float-orb-left 20s ease-in-out infinite alternate;
+}
+
+.cosmic-journey-section::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: -15%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(107,33,168,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+  animation: float-orb-right 25s ease-in-out infinite alternate;
+}
+
+@keyframes float-orb-left {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(100px, -50px) scale(1.1); }
+}
+
+@keyframes float-orb-right {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-100px, 50px) scale(1.1); }
+}
+
+.cosmic-journey-section .section-header {
+  position: relative;
+  z-index: 2;
+}
+
+.cosmic-journey-section .section-header h2 {
+  color: var(--color-on-surface);
+}
+
+.timeline-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 0px;
+}
+
+/* The sticky cards */
+.timeline-step {
+  position: sticky;
+  top: 150px;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(107, 33, 168, 0.1);
+  padding: 60px 50px;
+  border-radius: 30px;
+  box-shadow: 0 -15px 40px rgba(107, 33, 168, 0.05), 0 20px 40px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  color: var(--color-on-surface);
+  min-height: 250px;
+}
+
+/* Stagger the cards to create a physical stacking deck effect */
+.timeline-step:nth-child(1) { top: 150px; z-index: 1; background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(236,72,153,0.05)); }
+.timeline-step:nth-child(2) { top: 170px; z-index: 2; background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(107,33,168,0.05)); }
+.timeline-step:nth-child(3) { top: 190px; z-index: 3; background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(59,130,246,0.05)); }
+
+.timeline-step:nth-child(even) {
+  flex-direction: row; /* Keep text alignment consistent for cards */
+}
+
+.step-number {
+  font-size: 5rem;
+  font-weight: 900;
+  font-family: var(--font-display);
+  background: linear-gradient(180deg, var(--color-primary) 0%, rgba(107,33,168,0.2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  flex: 0 0 100px;
+  text-align: center;
+  position: static;
+}
+
+.timeline-content {
+  flex: 1;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  transition: none;
+  width: auto;
+}
+
+.timeline-content:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.timeline-content h3 {
+  font-size: 2.2rem;
+  color: var(--color-on-surface);
+  margin-bottom: 15px;
+}
+
+.timeline-content p {
+  color: var(--color-on-surface-variant);
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+/* 4. Interactive Core Values */
+.core-values-section {
+  padding: 0px 5% 20px;
+  background: #ffffff;
+  color: var(--color-on-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.core-values-section .section-header h2 {
+  color: var(--color-on-surface);
+}
+
+.values-marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0 10px;
+  z-index: 2;
+}
+
+.values-marquee-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: scroll-values 30s linear infinite;
+}
+
+.values-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-values {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 15px)); }
+}
+
+.value-card {
+  display: flex;
+  width: 450px;
+  height: 220px;
+  background: #ffffff;
+  border: 1px solid rgba(107, 33, 168, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(107,33,168,0.1);
+}
+
+.value-card-left {
+  flex: 0 0 35%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.gradient-purple { background: linear-gradient(135deg, rgba(107,33,168,0.8), rgba(107,33,168,1)); }
+.gradient-pink { background: linear-gradient(135deg, rgba(236,72,153,0.8), rgba(236,72,153,1)); }
+.gradient-blue { background: linear-gradient(135deg, rgba(59,130,246,0.8), rgba(59,130,246,1)); }
+.gradient-green { background: linear-gradient(135deg, rgba(16,185,129,0.8), rgba(16,185,129,1)); }
+
+.value-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.value-icon-wrapper span {
+  font-size: 24px;
+  color: white;
+}
+
+.value-card-number {
+  font-size: 3rem;
+  font-weight: 900;
+  font-family: var(--font-display);
+  opacity: 0.9;
+  line-height: 1;
+}
+
+.value-card-right {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.value-card-right h3 {
+  font-size: 1.4rem;
+  color: var(--color-on-surface);
+  margin-bottom: 12px;
+}
+
+.value-card-right p {
+  color: var(--color-on-surface-variant);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* FAQ spacing */
+.about-faq-container {
+  padding: 60px 5% 20px;
+  background: #fff;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .master-profile-container {
+    flex-direction: column;
+  }
+  .master-image-box {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+  }
+  .master-text-box {
+    flex: 0 0 100%;
+    margin-left: 0;
+    width: 90%;
+    margin-top: -60px;
+  }
+  .about-hero-title {
+    font-size: 4.5rem;
+  }
+  .about-hero-subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-step {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    padding: 40px 30px;
+    gap: 20px;
+    top: 100px !important; /* Stack higher on mobile */
+  }
+  .step-number {
+    font-size: 4rem;
+    flex: 0 0 auto;
+  }
+  .timeline-content {
+    width: 100%;
+    margin-left: 0;
+    padding: 0;
+  }
+  .about-hero-title {
+    font-size: 3.2rem;
+  }
+  .about-hero-subtitle {
+    font-size: 1.1rem;
+  }
+  .master-text-box {
+    width: 100%;
+    padding: 30px 20px;
+    margin-top: -40px;
+    border-radius: 24px;
+    box-sizing: border-box;
+  }
+  .master-text-box h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .master-text-box p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+  .master-quote {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    padding-left: 15px;
+    text-align: left;
+  }
+  .master-action-area {
+    text-align: center;
+    margin-top: 30px;
+  }
+}

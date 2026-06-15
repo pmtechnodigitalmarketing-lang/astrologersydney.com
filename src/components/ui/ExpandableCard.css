@@ -1,0 +1,230 @@
+/* ExpandableOverlay */
+.expandable-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ExpandableModal */
+.expandable-modal-wrapper {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1001;
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .expandable-modal-wrapper {
+    margin-top: 4rem;
+  }
+}
+
+.expandable-modal {
+  width: 100%;
+  max-width: 850px;
+  height: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  scrollbar-width: none;
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  position: relative;
+  pointer-events: auto;
+}
+.expandable-modal::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .expandable-modal {
+    border-radius: 24px 24px 0 0;
+  }
+}
+
+.expandable-modal-image-wrapper {
+  position: relative;
+}
+
+.expandable-modal-image-wrapper::before {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: -1px;
+  height: 70px;
+  z-index: 50;
+  background: linear-gradient(to top, #ffffff, transparent);
+}
+
+.expandable-modal-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.expandable-modal-content-wrapper {
+  position: relative;
+  height: 100%;
+  background: #fff;
+}
+
+.expandable-modal-content-wrapper::before {
+  content: '';
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  height: 70px;
+  z-index: 50;
+  background: linear-gradient(to top, #ffffff, transparent);
+  pointer-events: none;
+}
+
+.expandable-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+  height: auto;
+}
+
+.expandable-modal-desc {
+  color: #71717a;
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.expandable-modal-title {
+  font-weight: 600;
+  color: #000000;
+  font-size: 2.25rem;
+  margin-top: 0.125rem;
+  line-height: 1.2;
+}
+
+.expandable-close-btn, .expandable-open-btn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fafafa;
+  color: rgba(0,0,0,0.7);
+  border: 1px solid rgba(229,231,235,0.9);
+  cursor: pointer;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.expandable-close-btn {
+  width: 40px;
+  height: 40px;
+}
+
+.expandable-open-btn {
+  width: 32px;
+  height: 32px;
+}
+
+.expandable-close-btn:hover, .expandable-open-btn:hover {
+  background: #f5f5f5;
+  color: #000;
+  border-color: rgba(209,213,219,0.9);
+}
+
+.expandable-modal-body {
+  position: relative;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .expandable-modal-body {
+    padding: 0 2rem;
+  }
+}
+
+.expandable-modal-children {
+  color: #71717a;
+  font-size: 1rem;
+  padding-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  overflow: auto;
+  line-height: 1.6;
+}
+
+/* Expandable Trigger Card */
+.expandable-trigger-card {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafafa;
+  border-radius: 1rem;
+  cursor: pointer;
+  border: 1px solid rgba(229,231,235,0.7);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.expandable-trigger-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+.expandable-trigger-inner {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  width: 100%;
+}
+
+.expandable-trigger-image {
+  width: 100%;
+  height: 14rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.expandable-trigger-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 0.25rem 0.25rem;
+}
+
+.expandable-trigger-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.expandable-trigger-desc {
+  color: #71717a;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0;
+  text-align: left;
+}
+
+.expandable-trigger-title {
+  color: #000;
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin: 0;
+  text-align: left;
+}
