@@ -539,42 +539,7 @@ export const astrologyServices = [
       },
     ],
   },
-  {
-    id: 18,
-    slug: "tarot-card-reading",
-    title: "Tarot Card Reading",
-    description:
-      "Divination for immediate guidance. Tarot readings tap into your subconscious and spirit guides to answer specific, pressing life questions.",
-    longDescription: [
-      "When you find yourself at a crossroads and need immediate, clear guidance, a Tarot Card Reading is an invaluable tool. The Tarot is not a parlor trick; it is a profound archetypal system that mirrors the subconscious mind and channels wisdom from your higher self and spirit guides. It cuts through the noise of anxiety to reveal the unvarnished truth of your situation.",
-      "Our expert Tarot readers specialize in creating a spiritually protected space where they can intuitively connect with your energy. Whether you are agonizing over a career choice, confused by a partner's mixed signals, or seeking general direction for the upcoming months, the cards provide startlingly accurate reflections of the current energetic trajectory.",
-      "A true Tarot reading is deeply empowering. It does not dictate a fixed, unavoidable future. Instead, it highlights the likely outcomes of your current path and reveals hidden influences. Armed with this divine insight, you are given the power and the foresight to change your actions and alter the outcome in your favor.",
-    ],
-    benefits: [
-      "Answers to specific questions",
-      "Immediate clarity on confusing situations",
-      "Insights into other people's intentions",
-      "Guidance for the next 3-6 months",
-    ],
-    image: "/images/fourth-tarot-card.jpg",
-    faqs: [
-      {
-        question: "Do I need to ask a specific question?",
-        answer:
-          "Yes, Tarot works best with specific, open-ended questions like 'What do I need to know about this job offer?'",
-      },
-      {
-        question: "Are the cards predicting a fixed future?",
-        answer:
-          "No, Tarot shows the current trajectory of energy. If you don't like the outcome, you have the free will to change it.",
-      },
-      {
-        question: "Is Tarot safe?",
-        answer:
-          "Yes, our readers are spiritually protected and only channel information from the highest divine sources.",
-      },
-    ],
-  },
+
   {
     id: 19,
     slug: "numerology",
