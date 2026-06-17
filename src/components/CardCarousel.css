@@ -6,7 +6,8 @@
 
 .services-swiper {
   width: 100%;
-  padding-bottom: 50px !important; /* Space for pagination */
+  padding-bottom: 50px !important;
+  /* Space for pagination */
 }
 
 .services-swiper .swiper-slide {
@@ -52,12 +53,11 @@
 }
 
 .carousel-image-wrapper {
-  width: 130px;
-  height: 130px;
+  width: 100%;
+  height: 240px;
   margin: 0 auto 1.5rem;
-  border-radius: 30px;
+  border-radius: 20px;
   overflow: hidden;
-  border: 4px solid #fff;
   position: relative;
   z-index: 1;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04), 0 0 20px rgba(107, 33, 168, 0.1);
@@ -96,8 +96,13 @@
 }
 
 @keyframes slowSpin {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .carousel-card h3 {
@@ -170,6 +175,7 @@
   .services-swiper .swiper-slide {
     width: 280px;
   }
+
   .carousel-card {
     padding: 2rem 1.5rem;
   }

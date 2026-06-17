@@ -16,34 +16,35 @@ const heroContent = [
   {
     title: (
       <>
-        Heal From Love &<br />
-        Relationship Breakups
+        Get Your Ex<br />
+        Love Back
       </>
     ),
     subtitle:
-      "Find clarity and closure after a difficult breakup. Our expert astrologers analyze your planetary transits to uncover the karmic lessons behind your past relationships. Receive compassionate guidance to release emotional blockages, rebuild your confidence, and prepare your heart for lasting connections.",
+      "Reconnect with your lost love and rebuild a strong, lasting relationship. Our expert astrologers provide powerful remedies and guidance to resolve misunderstandings, heal past wounds, and reignite the spark between you and your partner.",
+    image: "/images/ex_love_back.png",
   },
   {
     title: (
       <>
-        Find Peace Through
-        <br />
-        Spiritual Healing
+        Black Magic<br />
+        Removal
       </>
     ),
     subtitle:
-      "Awaken your true potential through profound spiritual healing. Uncover the unseen energetic blocks and karmic patterns holding you back from happiness. Our guides use sacred techniques to balance your chakras and align you with the universe's natural rhythms for a life of greater harmony.",
+      "Protect yourself and your loved ones from negative energies, evil eyes, and dark forces. We offer sacred spiritual cleansing and protective shields to eliminate blockages and bring peace, prosperity, and positivity back into your life.",
+    image: "/images/black_magic_removal.png",
   },
   {
     title: (
       <>
-        Unlock Your True
-        <br />
-        Career Potential
+        Love Problem<br />
+        Solution in 24 Hrs
       </>
     ),
     subtitle:
-      "Discover the professional path you were destined for by tapping into the cosmic blueprint of your career. We analyze your astrological houses to reveal your hidden talents and optimal periods for business expansion. Let the stars align your ambitions with your destiny for true professional success.",
+      "Facing continuous arguments, family objections, or trust issues? Get immediate, effective astrological solutions for all your love and marriage problems within 24 hours. Experience harmony and joy in your relationship once again.",
+    image: "/images/love_problem_solution.png",
   },
 ];
 
@@ -63,8 +64,7 @@ const Home = () => {
   // Parallax effects
   const yHeroText = useTransform(scrollY, [0, 500], [0, 150]);
   const opacityHeroText = useTransform(scrollY, [300, 600], [1, 0]);
-  const ySolarSystem = useTransform(scrollY, [0, 500], [0, -150]);
-  const rotateSolarSystem = useTransform(scrollY, [0, 1000], [0, 45]);
+  const yHeroVisual = useTransform(scrollY, [0, 500], [0, -100]);
 
   return (
     <div className="home-container">
@@ -126,42 +126,42 @@ const Home = () => {
 
           <motion.div
             className="hero-visual-wrapper"
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            style={{ y: ySolarSystem, rotate: rotateSolarSystem }}
+            style={{ y: yHeroVisual }}
           >
-            <div className="solar-system-container">
-              <div className="sun-core"></div>
+            <div className="hero-image-carousel">
+              <AnimatePresence>
+                <motion.div
+                  key={currentContentIndex}
+                  initial={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
+                  animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  className="hero-carousel-image-wrapper"
+                >
+                  <img
+                    src={heroContent[currentContentIndex].image}
+                    alt={heroContent[currentContentIndex].title.props?.children?.join?.("") || "Astrology Service"}
+                    className="carousel-image"
+                  />
+                  <div className="carousel-image-overlay"></div>
+                </motion.div>
+              </AnimatePresence>
 
-              {/* Orbits and Planets */}
-              <div className="orbit orbit-1">
-                <div className="planet mercury"></div>
-              </div>
-              <div className="orbit orbit-2">
-                <div className="planet venus"></div>
-              </div>
-              <div className="orbit orbit-3">
-                <div className="planet earth">
-                  <div className="moon"></div>
-                </div>
-              </div>
-              <div className="orbit orbit-4">
-                <div className="planet mars"></div>
-              </div>
-              <div className="orbit orbit-5">
-                <div className="planet jupiter"></div>
-              </div>
-              <div className="orbit orbit-6">
-                <div className="planet saturn">
-                  <div className="saturn-rings"></div>
-                </div>
-              </div>
-              <div className="orbit orbit-7">
-                <div className="planet uranus"></div>
-              </div>
-              <div className="orbit orbit-8">
-                <div className="planet neptune"></div>
+              {/* Carousel Indicators */}
+              <div className="carousel-indicators">
+                {heroContent.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`indicator-dot ${
+                      index === currentContentIndex ? "active" : ""
+                    }`}
+                    onClick={() => setCurrentContentIndex(index)}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
               </div>
             </div>
           </motion.div>

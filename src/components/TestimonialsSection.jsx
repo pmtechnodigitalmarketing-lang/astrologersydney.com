@@ -1,7 +1,7 @@
 import React from 'react';
 import './TestimonialsSection.css';
 
-const reviews = [
+const defaultReviews = [
   { id: 1, name: "Chloe S., Sydney", text: "The insights I received were incredibly accurate. It helped me navigate a tough career transition with confidence.", rating: 5, image: "https://i.pravatar.cc/150?img=47" },
   { id: 2, name: "Lachlan M., Melbourne", text: "I was skeptical at first, but the relationship reading was spot on. Highly recommend their services!", rating: 5, image: "https://i.pravatar.cc/150?img=11" },
   { id: 3, name: "Mia J., Brisbane", text: "A truly transformative experience. The astrologer was compassionate and deeply knowledgeable.", rating: 5, image: "https://i.pravatar.cc/150?img=32" },
@@ -10,7 +10,8 @@ const reviews = [
   { id: 6, name: "Jack W., Gold Coast", text: "Professional, confidential, and incredibly insightful. The best spiritual service I've ever used.", rating: 5, image: "https://i.pravatar.cc/150?img=68" },
 ];
 
-const TestimonialsSection = () => {
+const TestimonialsSection = ({ customReviews }) => {
+  const displayReviews = customReviews || defaultReviews;
   return (
     <section className="testimonials-section">
       <div className="testimonials-header">
@@ -20,7 +21,7 @@ const TestimonialsSection = () => {
       
       <div className="marquee-wrapper">
         <div className="marquee-content">
-          {reviews.map(review => (
+          {displayReviews.map(review => (
             <div key={review.id} className="review-card">
               <div className="stars">
                 {'★'.repeat(review.rating)}
@@ -33,7 +34,7 @@ const TestimonialsSection = () => {
             </div>
           ))}
           {/* Duplicate for infinite loop */}
-          {reviews.map(review => (
+          {displayReviews.map(review => (
             <div key={`dup-${review.id}`} className="review-card">
               <div className="stars">
                 {'★'.repeat(review.rating)}
