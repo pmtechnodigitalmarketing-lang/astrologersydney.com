@@ -52,7 +52,7 @@ const Footer = () => {
             <Link to="/service/love-relationship-reading">Love & Relationship</Link>
             <Link to="/service/career-business-astrology">Career & Business</Link>
             <Link to="/service/marriage-compatibility">Marriage Compatibility</Link>
-            <Link to="/service/tarot-card-reading">Tarot Card Reading</Link>
+            <Link to="/service/bring-your-ex-love-back">Bring Your EX Love Back</Link>
             <Link to="/service/palmistry">Palmistry Reading</Link>
           </nav>
         </div>

@@ -959,7 +959,8 @@
   }
 
   .features-section {
-    padding: 60px 5%;
+    padding: 0px 5% 40px !important;
+    margin-top: -30px;
   }
 
   .section-header h2 {
@@ -1141,7 +1142,7 @@
   
   .hero-title { font-size: 2.8rem !important; margin-bottom: 1.5rem; word-break: break-word; line-height: 1.1; }
   .hero-subtitle { font-size: 1.1rem !important; margin-bottom: 2rem; line-height: 1.5; }
-  .hero-section { padding: 6.5rem 5% 2rem !important; min-height: auto; text-align: center; }
+  .hero-section { padding: 6.5rem 5% 0rem !important; min-height: auto; text-align: center; }
   
   .hero-actions { justify-content: center; }
   .live-cosmos-badge { margin-left: auto; margin-right: auto; }
@@ -1157,7 +1158,7 @@
   
   /* Zodiac Visual Stacked Properly */
   .solar-system-container { transform: scale(0.65); margin: 0 auto; transform-origin: center; }
-  .hero-visual-wrapper { min-height: 350px; display: flex; align-items: center; justify-content: center; }
+  .hero-visual-wrapper { min-height: auto; display: flex; align-items: center; justify-content: center; }
   
   .section-header h2 { font-size: 2.2rem !important; }
   .section-header p { font-size: 1rem !important; }
