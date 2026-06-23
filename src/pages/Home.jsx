@@ -8,7 +8,7 @@ import BranchesSection from "../components/BranchesSection";
 import CardCarousel from "../components/CardCarousel";
 import TestimonialsSection from "../components/TestimonialsSection";
 import { astrologyServices } from "../data/servicesData";
-import { CinematicHero } from "../components/CinematicHero";
+import { ClassicHero } from "../components/ClassicHero";
 import "./Home.css";
 const Home = () => {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <CinematicHero />
+      <ClassicHero />
 
       {/* Features Section */}
       <section className="features-section">
