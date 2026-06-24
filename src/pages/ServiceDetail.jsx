@@ -34,22 +34,22 @@ const ServiceDetail = () => {
     "description": service.description,
     "provider": {
       "@type": "Organization",
-      "name": "AstroMystic",
-      "url": "https://astromystic.com"
+      "name": "Pandit prabhu ram",
+      "url": "https://Pandit prabhu ram.com"
     },
     "serviceType": "Spiritual Guidance"
   };
 
   return (
     <div className="premium-service-detail">
-      <SEO 
+      <SEO
         title={service.title}
         description={service.description}
         schema={serviceSchema}
       />
-      
+
       <div className="container relative z-10 sd-page-container">
-        <motion.div 
+        <motion.div
           className="glass-panel main-content-panel"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -58,13 +58,13 @@ const ServiceDetail = () => {
           <div className="sd-split-layout">
             <div className="sd-image-col">
               <img src={service.image} alt={service.title} className="sd-service-img" />
-              
+
               <div className="glass-panel action-card mt-5">
                 <div className="sd-rating mb-4">
-                  <span className="sd-stars">★★★★★</span> 
+                  <span className="sd-stars">★★★★★</span>
                   <span className="rating-text">Divine Shield Rated</span>
                 </div>
-                
+
                 <h4 className="mb-4">Ready for clarity?</h4>
                 <div className="sd-action-buttons-premium">
                   <button className="btn btn-primary full-width mb-3 pulse-btn" onClick={() => window.location.href = 'tel:+61450144999'}>
@@ -91,12 +91,12 @@ const ServiceDetail = () => {
                   <p>{service.description}</p>
                 )}
               </div>
-              
+
               <h3 className="mb-3">What You Will Discover</h3>
               <div className="sd-benefits-premium">
                 {service.benefits.map((benefit, index) => (
-                  <motion.div 
-                    className="benefit-item-premium" 
+                  <motion.div
+                    className="benefit-item-premium"
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -113,7 +113,7 @@ const ServiceDetail = () => {
         </motion.div>
 
         {/* Other Portals Section */}
-        <motion.div 
+        <motion.div
           className="other-portals-section mt-5 pt-5"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -122,8 +122,8 @@ const ServiceDetail = () => {
           <h2 className="text-center text-gradient mb-5">Explore Other Portals</h2>
           <div className="other-portals-grid">
             {otherServices.slice(0, 4).map(other => (
-              <motion.button 
-                key={other.id} 
+              <motion.button
+                key={other.id}
                 className="glass-panel portal-nav-card"
                 whileHover={{ y: -5, scale: 1.02 }}
                 onClick={() => navigate(`/service/${other.slug}`)}

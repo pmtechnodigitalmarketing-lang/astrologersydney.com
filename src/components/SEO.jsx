@@ -1,16 +1,16 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const SEO = ({ 
-  title, 
-  description, 
-  type = 'website', 
-  url = 'https://astromystic.com', 
-  image = 'https://astromystic.com/default-og.jpg',
-  schema 
+const SEO = ({
+  title,
+  description,
+  type = 'website',
+  url = 'https://Pandit prabhu ram.com',
+  image = 'https://Pandit prabhu ram.com/default-og.jpg',
+  schema
 }) => {
-  const siteTitle = 'AstroMystic - Trusted Psychic & Spiritual Guidance';
-  const fullTitle = title ? `${title} | AstroMystic` : siteTitle;
+  const siteTitle = 'Pandit prabhu ram - Trusted Psychic & Spiritual Guidance';
+  const fullTitle = title ? `${title} | Pandit prabhu ram` : siteTitle;
 
   return (
     <Helmet>

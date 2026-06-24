@@ -18,7 +18,7 @@ const AboutAstrology = () => {
     "@type": "AboutPage",
     "name": "About Soul Astrology Centre",
     "description": "Discover the profound history and mission of the Soul Astrology Centre. Learn about our lead astrologer and authentic Vedic healing methodologies.",
-    "url": "https://astromystic.com/info/about-astrology"
+    "url": "https://Pandit prabhu ram.com/info/about-astrology"
   };
 
   const aboutFaqs = [
@@ -30,7 +30,7 @@ const AboutAstrology = () => {
 
   return (
     <div className="about-page">
-      <SEO 
+      <SEO
         title="About Us | Soul Astrology Centre"
         description="Discover the profound history and mission of the Soul Astrology Centre. Learn about our lead astrologer and authentic Vedic healing methodologies."
         schema={schema}
@@ -47,7 +47,7 @@ const AboutAstrology = () => {
           >
             <div className="cosmic-badge">Our Origins</div>
             <h1 className="about-hero-title">
-              Bridging the <span className="highlight">Cosmic</span><br/><span className="italic-text">and the Earthly</span>
+              Bridging the <span className="highlight">Cosmic</span><br /><span className="italic-text">and the Earthly</span>
             </h1>
             <p className="about-hero-subtitle">
               Discover the deep spiritual lineage, authentic methodologies, and powerful healings that form the foundation of our practice.
@@ -59,7 +59,7 @@ const AboutAstrology = () => {
       {/* 2. The Master Profile Card */}
       <section className="master-profile-section">
         <div className="master-profile-container">
-          <motion.div 
+          <motion.div
             className="master-image-box"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -69,8 +69,8 @@ const AboutAstrology = () => {
             <div className="master-image-glow"></div>
             <img loading="lazy" src="/images/best-astrologer-online.jpg" alt="Our Lead Astrologer" />
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="master-text-box"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -104,10 +104,10 @@ const AboutAstrology = () => {
         <div className="section-header">
           <h2>Our Vedic Methodology</h2>
         </div>
-        
+
         <div className="timeline-container">
           {/* Step 1 */}
-          <motion.div 
+          <motion.div
             className="timeline-step"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -122,7 +122,7 @@ const AboutAstrology = () => {
           </motion.div>
 
           {/* Step 2 */}
-          <motion.div 
+          <motion.div
             className="timeline-step"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -137,7 +137,7 @@ const AboutAstrology = () => {
           </motion.div>
 
           {/* Step 3 */}
-          <motion.div 
+          <motion.div
             className="timeline-step"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -158,7 +158,7 @@ const AboutAstrology = () => {
         <div className="section-header">
           <h2>Why Choose Us?</h2>
         </div>
-        
+
         <div className="values-marquee-container">
           <div className="values-marquee-track">
             {/* Group 1 */}
@@ -210,7 +210,7 @@ const AboutAstrology = () => {
                 <p>We listen without judgment. Your pain is entirely valid, and we are here to help you heal it.</p>
               </div>
             </div>
-            
+
             {/* Group 2 (Duplicate for seamless loop) */}
             <div className="value-card">
               <div className="value-card-left gradient-purple">
