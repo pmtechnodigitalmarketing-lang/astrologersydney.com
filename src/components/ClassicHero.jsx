@@ -18,6 +18,7 @@ const heroContent = [
       "Feeling lonely, stressed, or heartbroken"
     ],
     image: "/images/ChatGPT Image Jun 23, 2026, 08_47_38 PM.png",
+    mobileImage: "/images/ChatGPT Image Jun 25, 2026, 10_46_14 AM.png",
   },
   {
     title: "REMOVE NEGATIVE ENERGY",
@@ -32,6 +33,7 @@ const heroContent = [
       "Bad dreams & restless sleep"
     ],
     image: "/images/ChatGPT Image Jun 23, 2026, 08_46_06 PM.png",
+    mobileImage: "/images/ChatGPT Image Jun 25, 2026, 10_47_10 AM.png",
   },
   {
     title: "SOLVE LOVE PROBLEMS",
@@ -46,11 +48,19 @@ const heroContent = [
       "Divorce or separation threats"
     ],
     image: "/images/ChatGPT Image Jun 23, 2026, 08_48_47 PM.png",
+    mobileImage: "/images/ChatGPT Image Jun 25, 2026, 10_47_56 AM.png",
   }
 ];
 
 export function ClassicHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 992);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -66,10 +76,10 @@ export function ClassicHero() {
         <div
           key={`bg-${index}`}
           className={`classic-hero-bg-slide ${index === currentSlide ? 'active' : ''}`}
-          style={{ backgroundImage: `url('${slide.image}')` }}
+          style={{ backgroundImage: `url('${isMobile && slide.mobileImage ? slide.mobileImage : slide.image}')` }}
         />
       ))}
-      
+
       {/* Dark Gradient Overlay */}
       <div className="classic-hero-overlay"></div>
 
@@ -88,19 +98,19 @@ export function ClassicHero() {
               <div className="poster-top-badge">
                 FEELING STRESSED, UNLUCKY OR ENERGIZED FOR NO REASON?
               </div>
-              
+
               <h1 className="poster-main-title">
                 {heroContent[currentSlide].title}
               </h1>
-              
+
               <div className="poster-subtitle-banner">
                 {heroContent[currentSlide].subtitle}
               </div>
-              
+
               <p className="poster-description">
                 {heroContent[currentSlide].description}
               </p>
-              
+
               <div className="poster-signs-box">
                 <div className="poster-signs-header">
                   {heroContent[currentSlide].signsTitle}
@@ -123,7 +133,7 @@ export function ClassicHero() {
                 <div className="mj-title">MASTER JAI</div>
                 <div className="mj-badge">EXPERT IN ASTROLOGY & SPIRITUAL HEALING</div>
               </div>
-              
+
               <div className="poster-features-grid">
                 <div className="feature-item">
                   <div className="feature-icon"><ShieldCheck size={28} /></div>
@@ -157,7 +167,7 @@ export function ClassicHero() {
               <span className="contact-number">+61 405 077 444</span>
             </div>
           </a>
-          
+
           <div className="contact-email">
             <Mail size={20} className="email-icon" />
             <a href="mailto:masterjai999@gmail.com">masterjai999@gmail.com</a>
