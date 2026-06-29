@@ -381,6 +381,10 @@
     font-size: 18px;
   }
   
+  .navbar-logo-text {
+    display: none;
+  }
+  
   .navbar-actions {
     display: none; /* Can hide the book consultation button on mobile header, or we can move it inside the menu */
   }

@@ -61,6 +61,12 @@
     height: 50px;
   }
 
+  .email-float {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+  }
+
   .contact-float .material-symbols-outlined {
     font-size: 24px;
   }

@@ -49,7 +49,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
           <img src="/images/logo.png" alt="Soul Astrology Centre Logo" className="navbar-logo-img" />
-          SOUL ASTROLOGY CENTRE
+          <span className="navbar-logo-text">SOUL ASTROLOGY CENTRE</span>
         </Link>
         
         {/* Mobile Menu Toggle Button */}
