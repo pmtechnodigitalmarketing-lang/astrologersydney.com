@@ -18,7 +18,7 @@ const heroContent = [
       "Feeling lonely, stressed, or heartbroken"
     ],
     image: "/images/ChatGPT Image Jun 23, 2026, 08_47_38 PM.png",
-    mobileImage: "/images/ChatGPT Image Jun 25, 2026, 10_46_14 AM.png",
+    mobileImage: "/images/ChatGPT Image Jun 29, 2026, 11_05_26 AM.png",
   },
   {
     title: "REMOVE NEGATIVE ENERGY",
@@ -33,7 +33,7 @@ const heroContent = [
       "Bad dreams & restless sleep"
     ],
     image: "/images/ChatGPT Image Jun 23, 2026, 08_46_06 PM.png",
-    mobileImage: "/images/ChatGPT Image Jun 25, 2026, 10_47_10 AM.png",
+    mobileImage: "/images/image.png",
   },
   {
     title: "SOLVE LOVE PROBLEMS",
@@ -48,7 +48,7 @@ const heroContent = [
       "Divorce or separation threats"
     ],
     image: "/images/ChatGPT Image Jun 23, 2026, 08_48_47 PM.png",
-    mobileImage: "/images/ChatGPT Image Jun 25, 2026, 10_47_56 AM.png",
+    mobileImage: "/images/ChatGPT Image Jun 29, 2026, 11_49_09 AM.png",
   }
 ];
 
@@ -158,13 +158,13 @@ export function ClassicHero() {
 
         {/* Bottom Contact Bar (Static across slides) */}
         <div className="poster-contact-bar">
-          <a href="tel:+61405077444" className="contact-action">
+          <a href="tel:+61450144999" className="contact-action">
             <div className="contact-icon-wrapper">
               <PhoneCall size={28} />
             </div>
             <div className="contact-details">
               <span className="contact-label">CALL NOW & GET SOLUTION</span>
-              <span className="contact-number">+61 405 077 444</span>
+              <span className="contact-number">+61 450 144 999</span>
             </div>
           </a>
 
