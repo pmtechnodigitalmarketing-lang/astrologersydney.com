@@ -67,7 +67,7 @@ const AboutAstrology = () => {
             transition={{ duration: 1 }}
           >
             <div className="master-image-glow"></div>
-            <img loading="lazy" src="/images/best-astrologer-online.jpg" alt="Our Lead Astrologer" />
+            <img loading="lazy" src="/images/163114817763752088.jpg" alt="Our Lead Astrologer" />
           </motion.div>
 
           <motion.div

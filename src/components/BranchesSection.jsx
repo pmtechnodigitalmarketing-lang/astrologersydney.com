@@ -93,13 +93,7 @@ const BranchesSection = () => {
 
                   <div className="accordion-text">
                     <h3>{branch.city}</h3>
-                    <div className="accordion-detail">
-                      <p>{branch.address}</p>
-                    </div>
-                    <div className="accordion-detail">
-                      <span className="material-symbols-outlined">call</span>
-                      <p>{branch.phone}</p>
-                    </div>
+
                     <a
                       href={`tel:${branch.phone.replace(/\s+/g, "")}`}
                       className="btn-branch-contact"

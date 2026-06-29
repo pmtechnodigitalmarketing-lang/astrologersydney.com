@@ -75,7 +75,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>Copyright &copy; 2026, Soul Astrology Centre. All rights reserved.</p>
+        <p>Copyright &copy; 2017, Soul Astrology Centre. All rights reserved.</p>
       </div>
     </footer>
   );
