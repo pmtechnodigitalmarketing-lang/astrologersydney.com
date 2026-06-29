@@ -144,7 +144,7 @@
   flex-direction: column;
   gap: var(--spacing-md);
   padding: 15px 25px;
-  border-radius: var(--rounded-full);
+  border-radius: var(--rounded-md);
 }
 
 @media (min-width: 768px) {
@@ -170,7 +170,7 @@
   font-size: 14px;
   font-weight: 600;
   padding: 10px 24px;
-  border-radius: var(--rounded-full);
+  border-radius: var(--rounded-sm);
   white-space: nowrap;
   background-color: transparent;
   color: var(--color-on-surface-variant);
@@ -220,7 +220,7 @@
   color: var(--color-on-surface);
   font-family: var(--font-body);
   font-size: 16px;
-  border-radius: var(--rounded-full);
+  border-radius: var(--rounded-md);
   padding: 12px 16px 12px 48px;
   transition: all 0.3s;
 }
@@ -393,9 +393,25 @@
 
 /* --- COMPREHENSIVE MOBILE OPTIMIZATIONS --- */
 @media (max-width: 768px) {
-  .hero-bg { height: auto !important; min-height: 650px; padding: 2rem !important; justify-content: center; }
+  .blog-layout { padding-top: 100px; }
+  .hero-bg { 
+    height: auto !important; 
+    min-height: auto; 
+    padding: 3rem 1.5rem 2rem !important; 
+    justify-content: flex-end; 
+  }
   .blog-hero-title { font-size: 2.2rem !important; margin-bottom: 1rem; line-height: 1.2; word-break: break-word; }
   .hero-subtitle { font-size: 1rem !important; margin-bottom: 1.5rem; line-height: 1.4; }
+  
+  .filter-pills { 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    overflow-x: visible; 
+  }
+  .filter-pill { 
+    padding: 8px 16px; 
+    font-size: 0.9rem; 
+  }
   
   .article-img-wrapper { height: 250px !important; }
   .article-title { font-size: 1.8rem !important; }

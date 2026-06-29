@@ -347,13 +347,57 @@
   .services-premium-hero {
     padding-top: 3rem;
     margin-bottom: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .premium-hero-title {
     font-size: 2.5rem !important;
     word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
   .premium-hero-subtitle {
     font-size: 1rem !important;
-    padding: 0 1rem;
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .premium-hero-title {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .premium-hero-title {
+    font-size: 1.5rem !important;
+  }
+  .services-premium-cta {
+    padding: 2rem 1rem;
+  }
+  .services-premium-cta h2 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (max-width: 200px) {
+  .premium-hero-title {
+    font-size: 1.1rem !important;
+  }
+  .services-premium-cta h2 {
+    font-size: 1.1rem !important;
+  }
+  .cta-btn {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+  .tarot-card-inner {
+    padding: 0.8rem;
+  }
+  .tarot-image-container {
+    height: 150px;
+  }
+  .tarot-content h3 {
+    font-size: 1.1rem;
   }
 }

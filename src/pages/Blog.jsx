@@ -1,14 +1,103 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import './Blog.css';
-import SEO from '../components/SEO';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import "./Blog.css";
+import SEO from "../components/SEO";
 
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0 }
 };
 
+const allArticles = [
+  {
+    id: 1,
+    title: "Why Does Love Fail? Astrological Reasons Behind Breakups",
+    desc: "An in-depth analysis of Venus afflictions, severe Mars-Rahu conjunctions, and 7th house doshas that cause recurring heartbreak�and how ethical astrology can help you overcome them. Learn to identify the karmic patterns holding you back, discover practical remedies to heal past wounds, and explore how cosmic timing plays a crucial role in manifesting a healthy, long-lasting relationship. Whether you are currently navigating a difficult separation or seeking to break a cycle of disappointment, this comprehensive guide offers the spiritual clarity you need to move forward with an open heart.",
+    badge: "Deep Healing",
+    category: "Love & Marriage",
+    img: "/images/1124000019581294130.jpg",
+    author: "Lyra Starweaver",
+    authorAvatar: "https://ui-avatars.com/api/?name=Lyra+Starweaver&background=ec4899&color=fff",
+    time: "15 min read",
+    isMainEditorPick: true
+  },
+  {
+    id: 2,
+    title: "Karmic Debt in Relationships",
+    desc: "Are you repeating the same toxic patterns? Learn how past-life karma dictates your current romantic life.",
+    badge: "Karma",
+    category: "Affairs & Karma",
+    img: "/images/karmic_debt_landscape.png",
+    author: "Nova Reed",
+    authorAvatar: "https://ui-avatars.com/api/?name=Nova+Reed&background=1E3A8A&color=fff",
+    time: "8 min read",
+    isEditorSidebar: true
+  },
+  {
+    id: 3,
+    title: "Vedic Remedies for Lost Love",
+    desc: "Powerful mantras and astrological rituals to clear negative energy and attract your true soulmate.",
+    badge: "Remedies",
+    category: "Healing Remedies",
+    img: "/images/644225921742130200.jpg",
+    author: "Elara Moon",
+    authorAvatar: "https://ui-avatars.com/api/?name=Elara+Moon&background=6b21a8&color=fff",
+    time: "4 min read",
+    isEditorSidebar: true
+  },
+  {
+    id: 4,
+    title: "Kundali Matching: Beyond the Score",
+    desc: "Why 36 Gunas aren't always enough. The hidden planetary aspects that determine true marital harmony.",
+    badge: "Compatibility",
+    category: "Compatibility",
+    img: "/images/serene-village-landscape.jpg",
+    author: "Orion Vance",
+    authorAvatar: "https://ui-avatars.com/api/?name=Orion+Vance&background=1E3A8A&color=fff",
+    time: "5 min read",
+    isLatest: true
+  },
+  {
+    id: 5,
+    title: "Astrological Signs of Infidelity",
+    desc: "How the positioning of Rahu, Venus, and the 7th Lord can indicate a partner's wandering eye and hidden affairs.",
+    badge: "Warning Signs",
+    category: "Affairs & Karma",
+    img: "/images/astro-butterfly.jpg",
+    author: "Nova Reed",
+    authorAvatar: "https://ui-avatars.com/api/?name=Nova+Reed&background=ec4899&color=fff",
+    time: "8 min read",
+    isLatest: true
+  },
+  {
+    id: 6,
+    title: "Healing from a Toxic Marriage",
+    desc: "Astrological guidance on when to fight for your marriage using remedies, and when the stars say it's time to walk away.",
+    badge: "Healing",
+    category: "Healing Remedies",
+    img: "/images/toxic-marriage-signs.jpg",
+    author: "Elara Moon",
+    authorAvatar: "https://ui-avatars.com/api/?name=Elara+Moon&background=6b21a8&color=fff",
+    time: "4 min read",
+    isLatest: true
+  }
+];
+
+const categories = ["All", "Love & Marriage", "Affairs & Karma", "Healing Remedies", "Compatibility"];
+
 const Blog = () => {
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredArticles = allArticles.filter(article => {
+    const matchesCategory = activeFilter === "All" || article.category === activeFilter;
+    const matchesSearch = article.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          article.desc.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  const isFiltering = activeFilter !== "All" || searchQuery !== "";
+
   return (
     <div className="blog-layout">
       <SEO 
@@ -88,214 +177,188 @@ const Blog = () => {
           transition={{ delay: 1, duration: 0.6 }}
         >
           <div className="filter-pills no-scrollbar">
-            <button className="filter-pill active">All</button>
-            <button className="filter-pill">Love & Marriage</button>
-            <button className="filter-pill">Affairs & Karma</button>
-            <button className="filter-pill">Healing Remedies</button>
-            <button className="filter-pill">Compatibility</button>
+            {categories.map(cat => (
+              <button 
+                key={cat}
+                className={`filter-pill ${activeFilter === cat ? "active" : ""}`}
+                onClick={() => setActiveFilter(cat)}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
           
           <div className="search-input-wrapper">
             <span className="material-symbols-outlined search-icon">search</span>
-            <input type="text" className="search-input" placeholder="Search the archives..." />
+            <input 
+              type="text" 
+              className="search-input" 
+              placeholder="Search the archives..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
         </motion.section>
 
-        {/* Featured Editorial Layout */}
-        <div className="section-header">
-          <motion.h2 
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUpVariant}
-            style={{fontFamily: 'var(--font-display)', fontSize: '2.5rem', color: 'var(--color-on-surface)'}}
-          >
-            Editor's Picks
-          </motion.h2>
-        </div>
-        
-        <section className="editorial-layout mb-xl">
-          <motion.div 
-            className="editorial-main article-card"
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUpVariant}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="article-img-wrapper" style={{ height: '400px' }}>
-              <img 
-                src="/images/1124000019581294130.jpg" 
-                alt="Heartbreak Healing" 
-                className="article-img" 
-              />
-              <div className="article-badge" style={{ backgroundColor: 'var(--color-primary)', color: '#fff', border: 'none' }}>Deep Healing</div>
+        {!isFiltering ? (
+          <>
+            {/* Featured Editorial Layout */}
+            <div className="section-header">
+              <motion.h2 
+                initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUpVariant}
+                style={{fontFamily: "var(--font-display)", fontSize: "2.5rem", color: "var(--color-on-surface)"}}
+              >
+                Editor's Picks
+              </motion.h2>
             </div>
-            <div className="article-content" style={{ padding: '2rem' }}>
-              <h3 className="article-title" style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>Why Does Love Fail? Astrological Reasons Behind Breakups</h3>
-              <p className="article-desc" style={{ fontSize: '1.2rem', lineHeight: '1.6', marginBottom: '2rem' }}>
-                An in-depth analysis of Venus afflictions, severe Mars-Rahu conjunctions, and 7th house doshas that cause recurring heartbreak—and how ethical astrology can help you overcome them. Learn to identify the karmic patterns holding you back, discover practical remedies to heal past wounds, and explore how cosmic timing plays a crucial role in manifesting a healthy, long-lasting relationship. Whether you are currently navigating a difficult separation or seeking to break a cycle of disappointment, this comprehensive guide offers the spiritual clarity you need to move forward with an open heart.
-              </p>
-              
-              <div className="article-footer">
-                <div className="author-info-small">
-                  <img src="https://ui-avatars.com/api/?name=Lyra+Starweaver&background=ec4899&color=fff" alt="Lyra Starweaver" className="author-avatar-small" style={{ width: '36px', height: '36px' }} />
-                  <span className="author-name-small" style={{ fontSize: '1.1rem' }}>Lyra Starweaver</span>
+            
+            <section className="editorial-layout mb-xl">
+              <motion.div 
+                className="editorial-main article-card"
+                initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUpVariant}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="article-img-wrapper" style={{ height: "400px" }}>
+                  <img 
+                    src={allArticles[0].img} 
+                    alt={allArticles[0].title} 
+                    className="article-img" 
+                  />
+                  <div className="article-badge" style={{ backgroundColor: "var(--color-primary)", color: "#fff", border: "none" }}>{allArticles[0].badge}</div>
                 </div>
-                <span className="article-time" style={{ fontSize: '1.1rem' }}>15 min read</span>
-              </div>
-            </div>
-          </motion.div>
-
-          <div className="editorial-sidebar">
-            {/* Sidebar Card 1 */}
-            <motion.article 
-              className="article-card"
-              initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUpVariant}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="article-img-wrapper" style={{ height: '180px' }}>
-                <img 
-                  src="/images/karmic_debt_landscape.png" 
-                  alt="Scorpio Deep Dive" 
-                  className="article-img" 
-                />
-                <div className="article-badge">Karma</div>
-              </div>
-              <div className="article-content">
-                <h3 className="article-title">Karmic Debt in Relationships</h3>
-                <p className="article-desc">Are you repeating the same toxic patterns? Learn how past-life karma dictates your current romantic life.</p>
-                <div className="article-footer">
-                  <div className="author-info-small">
-                    <img src="https://ui-avatars.com/api/?name=Nova+Reed&background=1E3A8A&color=fff" alt="Nova" className="author-avatar-small" />
-                    <span className="author-name-small">Nova Reed</span>
+                <div className="article-content" style={{ padding: "2rem" }}>
+                  <h3 className="article-title" style={{ fontSize: "2.2rem", marginBottom: "1rem" }}>{allArticles[0].title}</h3>
+                  <p className="article-desc" style={{ fontSize: "1.2rem", lineHeight: "1.6", marginBottom: "2rem" }}>
+                    {allArticles[0].desc}
+                  </p>
+                  
+                  <div className="article-footer">
+                    <div className="author-info-small">
+                      <img src={allArticles[0].authorAvatar} alt={allArticles[0].author} className="author-avatar-small" style={{ width: "36px", height: "36px" }} />
+                      <span className="author-name-small" style={{ fontSize: "1.1rem" }}>{allArticles[0].author}</span>
+                    </div>
+                    <span className="article-time" style={{ fontSize: "1.1rem" }}>{allArticles[0].time}</span>
                   </div>
-                  <span className="article-time">8 min read</span>
                 </div>
-              </div>
-            </motion.article>
+              </motion.div>
 
-            {/* Sidebar Card 2 */}
-            <motion.article 
-              className="article-card"
-              initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUpVariant}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <div className="article-img-wrapper" style={{ height: '180px' }}>
-                <img 
-                  src="/images/644225921742130200.jpg" 
-                  alt="Full Moon Ritual" 
-                  className="article-img" 
-                />
-                <div className="article-badge">Remedies</div>
+              <div className="editorial-sidebar">
+                {allArticles.filter(a => a.isEditorSidebar).map((article, idx) => (
+                  <motion.article 
+                    key={article.id}
+                    className="article-card"
+                    initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUpVariant}
+                    transition={{ duration: 0.6, delay: 0.2 + (idx * 0.2) }}
+                  >
+                    <div className="article-img-wrapper" style={{ height: "180px" }}>
+                      <img 
+                        src={article.img} 
+                        alt={article.title} 
+                        className="article-img" 
+                      />
+                      <div className="article-badge">{article.badge}</div>
+                    </div>
+                    <div className="article-content">
+                      <h3 className="article-title">{article.title}</h3>
+                      <p className="article-desc">{article.desc}</p>
+                      <div className="article-footer">
+                        <div className="author-info-small">
+                          <img src={article.authorAvatar} alt={article.author} className="author-avatar-small" />
+                          <span className="author-name-small">{article.author}</span>
+                        </div>
+                        <span className="article-time">{article.time}</span>
+                      </div>
+                    </div>
+                  </motion.article>
+                ))}
               </div>
-              <div className="article-content">
-                <h3 className="article-title">Vedic Remedies for Lost Love</h3>
-                <p className="article-desc">Powerful mantras and astrological rituals to clear negative energy and attract your true soulmate.</p>
-                <div className="article-footer">
-                  <div className="author-info-small">
-                    <img src="https://ui-avatars.com/api/?name=Elara+Moon&background=6b21a8&color=fff" alt="Elara" className="author-avatar-small" />
-                    <span className="author-name-small">Elara Moon</span>
+            </section>
+
+            <div className="section-header">
+              <motion.h2 
+                initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUpVariant}
+                style={{fontFamily: "var(--font-display)", fontSize: "2.5rem", color: "var(--color-on-surface)"}}
+              >
+                Latest Articles
+              </motion.h2>
+            </div>
+
+            {/* Article Grid */}
+            <section className="article-grid">
+              {allArticles.filter(a => a.isLatest).map((article, idx) => (
+                <motion.article 
+                  key={article.id}
+                  className="article-card"
+                  initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUpVariant}
+                  transition={{ duration: 0.5, delay: 0.1 + (idx * 0.1) }}
+                >
+                  <div className="article-img-wrapper">
+                    <img 
+                      src={article.img} 
+                      alt={article.title} 
+                      className="article-img" 
+                    />
+                    <div className="article-badge">{article.badge}</div>
                   </div>
-                  <span className="article-time">4 min read</span>
-                </div>
+                  <div className="article-content">
+                    <h3 className="article-title">{article.title}</h3>
+                    <p className="article-desc">{article.desc}</p>
+                    
+                    <div className="article-footer">
+                      <div className="author-info-small">
+                        <img src={article.authorAvatar} alt={article.author} className="author-avatar-small" />
+                        <span className="author-name-small">{article.author}</span>
+                      </div>
+                      <span className="article-time">{article.time}</span>
+                    </div>
+                  </div>
+                </motion.article>
+              ))}
+            </section>
+          </>
+        ) : (
+          <section className="article-grid" style={{ marginTop: "40px" }}>
+            {filteredArticles.length > 0 ? (
+              filteredArticles.map((article, idx) => (
+                <motion.article 
+                  key={article.id}
+                  className="article-card"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                >
+                  <div className="article-img-wrapper">
+                    <img 
+                      src={article.img} 
+                      alt={article.title} 
+                      className="article-img" 
+                    />
+                    <div className="article-badge">{article.badge}</div>
+                  </div>
+                  <div className="article-content">
+                    <h3 className="article-title">{article.title}</h3>
+                    <p className="article-desc">{article.desc}</p>
+                    <div className="article-footer">
+                      <div className="author-info-small">
+                        <img src={article.authorAvatar} alt={article.author} className="author-avatar-small" />
+                        <span className="author-name-small">{article.author}</span>
+                      </div>
+                      <span className="article-time">{article.time}</span>
+                    </div>
+                  </div>
+                </motion.article>
+              ))
+            ) : (
+              <div style={{ padding: "40px", gridColumn: "1 / -1", textAlign: "center" }}>
+                <h3 style={{ fontFamily: "var(--font-display)", color: "var(--color-on-surface-variant)" }}>No articles found for your search.</h3>
               </div>
-            </motion.article>
-          </div>
-        </section>
-
-        <div className="section-header">
-          <motion.h2 
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUpVariant}
-            style={{fontFamily: 'var(--font-display)', fontSize: '2.5rem', color: 'var(--color-on-surface)'}}
-          >
-            Latest Articles
-          </motion.h2>
-        </div>
-
-        {/* Article Grid */}
-        <section className="article-grid">
-          {/* Card 1 */}
-          <motion.article 
-            className="article-card"
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUpVariant}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <div className="article-img-wrapper">
-              <img 
-                src="/images/serene-village-landscape.jpg" 
-                alt="Ancient Roots" 
-                className="article-img" 
-              />
-              <div className="article-badge">Compatibility</div>
-            </div>
-            <div className="article-content">
-              <h3 className="article-title">Kundali Matching: Beyond the Score</h3>
-              <p className="article-desc">Why 36 Gunas aren't always enough. The hidden planetary aspects that determine true marital harmony.</p>
-              
-              <div className="article-footer">
-                <div className="author-info-small">
-                  <img src="https://ui-avatars.com/api/?name=Orion+Vance&background=1E3A8A&color=fff" alt="Orion Vance" className="author-avatar-small" />
-                  <span className="author-name-small">Orion Vance</span>
-                </div>
-                <span className="article-time">5 min read</span>
-              </div>
-            </div>
-          </motion.article>
-
-          {/* Card 2 */}
-          <motion.article 
-            className="article-card"
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUpVariant}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className="article-img-wrapper">
-              <img 
-                src="/images/astro-butterfly.jpg" 
-                alt="Mars Retrograde" 
-                className="article-img" 
-              />
-              <div className="article-badge">Warning Signs</div>
-            </div>
-            <div className="article-content">
-              <h3 className="article-title">Astrological Signs of Infidelity</h3>
-              <p className="article-desc">How the positioning of Rahu, Venus, and the 7th Lord can indicate a partner's wandering eye and hidden affairs.</p>
-              
-              <div className="article-footer">
-                <div className="author-info-small">
-                  <img src="https://ui-avatars.com/api/?name=Nova+Reed&background=ec4899&color=fff" alt="Nova Reed" className="author-avatar-small" />
-                  <span className="author-name-small">Nova Reed</span>
-                </div>
-                <span className="article-time">8 min read</span>
-              </div>
-            </div>
-          </motion.article>
-
-          {/* Card 3 */}
-          <motion.article 
-            className="article-card"
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUpVariant}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <div className="article-img-wrapper">
-              <img 
-                src="/images/toxic-marriage-signs.jpg" 
-                alt="Toxic Marriage Signs" 
-                className="article-img" 
-              />
-              <div className="article-badge">Healing</div>
-            </div>
-            <div className="article-content">
-              <h3 className="article-title">Healing from a Toxic Marriage</h3>
-              <p className="article-desc">Astrological guidance on when to fight for your marriage using remedies, and when the stars say it's time to walk away.</p>
-              
-              <div className="article-footer">
-                <div className="author-info-small">
-                  <img src="https://ui-avatars.com/api/?name=Elara+Moon&background=6b21a8&color=fff" alt="Elara Moon" className="author-avatar-small" />
-                  <span className="author-name-small">Elara Moon</span>
-                </div>
-                <span className="article-time">4 min read</span>
-              </div>
-            </div>
-          </motion.article>
-        </section>
+            )}
+          </section>
+        )}
       </div>
     </div>
   );
 };
 
 export default Blog;
+

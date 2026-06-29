@@ -516,11 +516,20 @@
     margin-left: 0;
     padding: 0;
   }
+  .about-hero-section {
+    min-height: auto;
+    padding-top: 120px;
+    padding-bottom: 100px;
+  }
   .about-hero-title {
     font-size: 3.2rem;
+    margin-bottom: 20px;
   }
   .about-hero-subtitle {
     font-size: 1.1rem;
+  }
+  .cosmic-badge {
+    margin-bottom: 15px;
   }
   .master-text-box {
     width: 100%;
