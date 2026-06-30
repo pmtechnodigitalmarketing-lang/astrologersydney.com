@@ -4,8 +4,8 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 96%;
-  max-width: 1600px;
+  width: 88%;
+  max-width: 1200px;
   z-index: 100;
   border-radius: 50px;
   background: rgba(255, 255, 255, 0.95);
@@ -22,7 +22,7 @@
 }
 
 .navbar-container {
-  padding: 10px 24px;
+  padding: 5px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -46,11 +46,9 @@
 }
 
 .navbar-logo-img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(107, 33, 168, 0.4);
+  height: 60px;
+  width: auto;
+  object-fit: contain;
   filter: none;
   -webkit-text-fill-color: initial;
 }
@@ -412,6 +410,7 @@
 .navbar-actions.mobile-only {
   display: none;
 }
+
 .mobile-social-icons {
   display: none;
 }
