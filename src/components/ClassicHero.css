@@ -1,29 +1,32 @@
 .classic-hero-section {
-  min-height: 100vh;
-  height: auto;
-  display: flex;
-  align-items: center;
+  width: 100%;
   position: relative;
   z-index: 1;
   overflow: hidden;
-  padding-top: 5rem;
-  padding-bottom: 2rem;
-  background-color: #05010a;
+  padding-top: 5rem; /* offset for header */
+  background-color: transparent;
+}
+
+.banner-images-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
 }
 
 .classic-hero-bg-slide {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  z-index: -2;
+  top: 0;
+  left: 0;
   opacity: 0;
   transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .classic-hero-bg-slide.active {
+  position: relative;
   opacity: 1;
-  transform: scale(1.02);
 }
 
 .classic-hero-overlay {
@@ -426,17 +429,13 @@
 
 @media (max-width: 992px) {
   .classic-hero-bg-slide {
-    background-size: 100% 100%;
-    background-position: top center;
-    background-repeat: no-repeat;
+    /* No longer needed for img */
   }
 
   .classic-hero-section {
     height: auto;
-    min-height: 100vh;
     padding-top: 6rem;
-    padding-bottom: 4rem;
-    align-items: flex-start;
+    padding-bottom: 0;
   }
 
   .poster-container {

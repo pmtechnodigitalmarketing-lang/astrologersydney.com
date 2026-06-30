@@ -202,7 +202,7 @@
 
 /* Features Section */
 .features-section {
-  padding: 60px 5% 20px;
+  padding: 20px 5% 20px;
   position: relative;
   z-index: 2;
   background: linear-gradient(to bottom, transparent, rgba(107, 33, 168, 0.06), transparent);
@@ -959,7 +959,7 @@
   }
 
   .features-section {
-    padding: 80px 5% 40px !important;
+    padding: 30px 5% 40px !important;
     margin-top: 0;
   }
 

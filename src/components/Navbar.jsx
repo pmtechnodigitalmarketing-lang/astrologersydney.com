@@ -76,7 +76,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
           <img src="/images/logo.webp" alt="Soul Astrology Centre Logo" className="navbar-logo-img" />
-          <span className="navbar-logo-text">SOUL ASTROLOGY CENTRE</span>
+
         </Link>
         
         {/* Mobile Menu Toggle Button */}

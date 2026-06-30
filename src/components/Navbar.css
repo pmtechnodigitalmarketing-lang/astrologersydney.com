@@ -326,10 +326,25 @@
 }
 
 @media (max-width: 1024px) {
+  .navbar {
+    width: 99.5%;
+    max-width: none;
+    top: 10px;
+  }
+
+  .navbar-container {
+    padding: 10px 30px;
+    min-height: 95px;
+  }
+
+  .navbar-logo-img {
+    height: 95px;
+  }
   .mobile-menu-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: auto;
   }
 
   .navbar-links {
@@ -388,7 +403,15 @@
   }
 
   .navbar-logo {
-    font-size: 18px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .mobile-menu-toggle .material-symbols-outlined {
+    font-weight: 900;
+    font-variation-settings: 'wght' 700;
   }
 
   .navbar-logo-text {

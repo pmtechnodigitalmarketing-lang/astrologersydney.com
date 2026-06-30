@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { PhoneCall, Mail, ShieldCheck, Sparkles, Zap, HeartHandshake, CheckCircle2 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import './ClassicHero.css';
 
 const heroContent = [
@@ -71,124 +69,16 @@ export function ClassicHero() {
 
   return (
     <section className="classic-hero-section poster-layout">
-      {/* Background Images */}
-      {heroContent.map((slide, index) => (
-        <div
-          key={`bg-${index}`}
-          className={`classic-hero-bg-slide ${index === currentSlide ? 'active' : ''}`}
-          style={{ backgroundImage: `url('${isMobile && slide.mobileImage ? slide.mobileImage : slide.image}')` }}
-        />
-      ))}
-
-      {/* Dark Gradient Overlay */}
-      <div className="classic-hero-overlay"></div>
-
-      <div className="poster-container container">
-        <AnimatePresence mode="popLayout">
-          <motion.div
-            key={`content-${currentSlide}`}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 20 }}
-            transition={{ duration: 0.5 }}
-            className="poster-content-grid"
-          >
-            {/* Left Column: Text & Signs */}
-            <div className="poster-left">
-              <div className="poster-top-badge">
-                FEELING STRESSED, UNLUCKY OR ENERGIZED FOR NO REASON?
-              </div>
-
-              <h1 className="poster-main-title">
-                {heroContent[currentSlide].title}
-              </h1>
-
-              <div className="poster-subtitle-banner">
-                {heroContent[currentSlide].subtitle}
-              </div>
-
-              <p className="poster-description">
-                {heroContent[currentSlide].description}
-              </p>
-
-              <div className="poster-signs-box">
-                <div className="poster-signs-header">
-                  {heroContent[currentSlide].signsTitle}
-                </div>
-                <ul className="poster-signs-list">
-                  {heroContent[currentSlide].signs.map((sign, idx) => (
-                    <li key={idx}>
-                      <span className="sign-icon">✨</span>
-                      {sign}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* Right Column: Master Jai & Badges */}
-            <div className="poster-right">
-              <div className="master-jai-block">
-                <div className="mj-subtitle">WORLD FAMOUS ASTROLOGER</div>
-                <div className="mj-title">MASTER JAI</div>
-                <div className="mj-badge">EXPERT IN ASTROLOGY & SPIRITUAL HEALING</div>
-              </div>
-
-              <div className="poster-features-grid">
-                <div className="feature-item">
-                  <div className="feature-icon"><ShieldCheck size={28} /></div>
-                  <div className="feature-text">PROTECTION FROM NEGATIVITY</div>
-                </div>
-                <div className="feature-item">
-                  <div className="feature-icon"><Sparkles size={28} /></div>
-                  <div className="feature-text">SPIRITUAL CLEANSING</div>
-                </div>
-                <div className="feature-item">
-                  <div className="feature-icon"><Zap size={28} /></div>
-                  <div className="feature-text">POWERFUL VEDIC RITUALS</div>
-                </div>
-                <div className="feature-item">
-                  <div className="feature-icon"><HeartHandshake size={28} /></div>
-                  <div className="feature-text">POSITIVE ENERGY & PEACE OF MIND</div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Bottom Contact Bar (Static across slides) */}
-        <div className="poster-contact-bar">
-          <a href="tel:+61450144999" className="contact-action">
-            <div className="contact-icon-wrapper">
-              <PhoneCall size={28} />
-            </div>
-            <div className="contact-details">
-              <span className="contact-label">CALL NOW & GET SOLUTION</span>
-              <span className="contact-number">+61 450 144 999</span>
-            </div>
-          </a>
-
-          <div className="contact-email">
-            <Mail size={20} className="email-icon" />
-            <a href="mailto:masterjai999@gmail.com">masterjai999@gmail.com</a>
-          </div>
-        </div>
-
-        {/* Footer info bar */}
-        <div className="poster-footer-bar">
-          <div className="footer-item">
-            <CheckCircle2 size={16} /> BLACK MAGIC REMOVAL
-          </div>
-          <div className="footer-item">
-            <CheckCircle2 size={16} /> BRING PEACE, HAPPINESS & SUCCESS
-          </div>
-          <div className="footer-item">
-            <CheckCircle2 size={16} /> PROTECT YOURSELF & YOUR FAMILY
-          </div>
-          <div className="footer-item">
-            <CheckCircle2 size={16} /> LIVE A POSITIVE & STRESS-FREE LIFE
-          </div>
-        </div>
+      {/* Banner Images */}
+      <div className="banner-images-wrapper">
+        {heroContent.map((slide, index) => (
+          <img
+            key={`bg-${index}`}
+            className={`classic-hero-bg-slide ${index === currentSlide ? 'active' : ''}`}
+            src={isMobile && slide.mobileImage ? slide.mobileImage : slide.image}
+            alt={slide.title}
+          />
+        ))}
       </div>
 
       <div className="classic-hero-dots">
