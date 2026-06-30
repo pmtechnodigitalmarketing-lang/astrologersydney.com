@@ -63,7 +63,8 @@
   display: none;
   align-items: center;
   gap: 20px;
-  margin-left: 60px; /* Move navigation menu a little to the right */
+  margin-left: 60px;
+  /* Move navigation menu a little to the right */
 }
 
 @media (min-width: 1024px) {
@@ -96,7 +97,8 @@
 
 .nav-link.active {
   color: var(--color-primary);
-  background: rgba(107, 33, 168, 0.05); /* Very subtle background for active tab */
+  background: rgba(107, 33, 168, 0.05);
+  /* Very subtle background for active tab */
 }
 
 /* Tubelight Animation Elements */
@@ -280,7 +282,7 @@
 }
 
 .btn-call:hover {
-  background-color: rgba(255, 255, 255,  1);
+  background-color: rgba(255, 255, 255, 1);
   border-color: rgba(107, 33, 168, 0.8);
   box-shadow: 0 4px 20px rgba(107, 33, 168, 0.3);
   transform: translateY(-2px);
@@ -325,23 +327,27 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   .navbar-links {
-    display: none; /* hidden by default */
+    display: none;
+    /* hidden by default */
   }
 
   .navbar-links.mobile-open {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255,  0.95);
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    width: 95%;
+    max-width: 350px;
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(107, 33, 168, 0.2);
-    border-radius: 0 0 20px 20px;
+    border-radius: 20px;
     padding: 20px;
     gap: 15px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -367,32 +373,33 @@
     margin-left: 10px;
     border-radius: 0;
   }
-  
+
   .navbar-links.mobile-open .dropdown-menu::before {
     display: none;
   }
-  
+
   .navbar-links.mobile-open .nav-link {
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
-  
+
   .navbar-logo {
     font-size: 18px;
   }
-  
+
   .navbar-logo-text {
     display: none;
   }
-  
+
   .navbar-actions {
-    display: none; /* Can hide the book consultation button on mobile header, or we can move it inside the menu */
+    display: none;
+    /* Can hide the book consultation button on mobile header, or we can move it inside the menu */
   }
-  
+
   .navbar-actions.desktop-only {
     display: none;
   }
-  
+
   .navbar-links.mobile-open .navbar-actions.mobile-only {
     display: flex;
     width: 100%;
@@ -405,5 +412,59 @@
 .navbar-actions.mobile-only {
   display: none;
 }
+.mobile-social-icons {
+  display: none;
+}
 
+@media (max-width: 1024px) {
+  .navbar-links.mobile-open .mobile-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 5px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(107, 33, 168, 0.1);
+    width: 100%;
+  }
+}
 
+.social-icon-btn {
+  color: rgba(107, 33, 168, 0.6);
+  background: rgba(107, 33, 168, 0.05);
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-icon-btn:hover {
+  background: rgba(107, 33, 168, 0.1);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.social-icon-btn.instagram-btn:hover {
+  background: rgba(225, 48, 108, 0.1);
+  color: #E1306C;
+  box-shadow: 0 4px 12px rgba(225, 48, 108, 0.3);
+}
+
+.social-icon-btn.facebook-btn:hover {
+  background: rgba(24, 119, 242, 0.1);
+  color: #1877F2;
+  box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);
+}
+
+.social-icon-btn.twitter-btn:hover {
+  background: rgba(29, 161, 242, 0.1);
+  color: #1DA1F2;
+  box-shadow: 0 4px 12px rgba(29, 161, 242, 0.3);
+}
+
+.social-icon-btn.youtube-btn:hover {
+  background: rgba(255, 0, 0, 0.1);
+  color: #FF0000;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+}
