@@ -17,14 +17,14 @@ const heroContent = [
       "Trust issues and emotional distance",
       "Feeling lonely, stressed, or heartbroken"
     ],
-    image: "/images/ChatGPT Image Jun 23, 2026, 08_47_38 PM.png",
-    mobileImage: "/images/ChatGPT Image Jun 29, 2026, 11_05_26 AM.png",
+    image: "/images/Master Jai Bn-1.webp",
+    mobileImage: "/images/image copy.webp",
   },
   {
-    title: "REMOVE NEGATIVE ENERGY",
+    title: "BLACK MAGIC REMOVAL",
     subtitle: "Restore Peace, Happiness & Positivity",
-    description: "Negative energy and evil forces can affect your health, relationships, career, and peace of mind. Master Jai uses powerful spiritual techniques to clear negativity and protect you from bad energy.",
-    signsTitle: "SIGNS YOU MAY HAVE NEGATIVE ENERGY",
+    description: "Black magic and evil forces can affect your health, relationships, career, and peace of mind. Master Jai uses powerful spiritual techniques to clear negativity and protect you from bad energy.",
+    signsTitle: "SIGNS OF BLACK MAGIC OR NEGATIVITY",
     signs: [
       "Constant stress, anxiety & fear",
       "Unexplained health problems",
@@ -32,8 +32,8 @@ const heroContent = [
       "Relationship problems & fights",
       "Bad dreams & restless sleep"
     ],
-    image: "/images/ChatGPT Image Jun 23, 2026, 08_46_06 PM.png",
-    mobileImage: "/images/image.png",
+    image: "/images/Master Jai Bn-3.webp",
+    mobileImage: "/images/image copy 3.webp",
   },
   {
     title: "SOLVE LOVE PROBLEMS",
@@ -47,8 +47,8 @@ const heroContent = [
       "One-sided love or rejection",
       "Divorce or separation threats"
     ],
-    image: "/images/ChatGPT Image Jun 23, 2026, 08_48_47 PM.png",
-    mobileImage: "/images/ChatGPT Image Jun 29, 2026, 11_49_09 AM.png",
+    image: "/images/Master Jai Bn-2.webp",
+    mobileImage: "/images/image copy 2.webp",
   }
 ];
 
@@ -177,7 +177,7 @@ export function ClassicHero() {
         {/* Footer info bar */}
         <div className="poster-footer-bar">
           <div className="footer-item">
-            <CheckCircle2 size={16} /> REMOVE NEGATIVE ENERGY
+            <CheckCircle2 size={16} /> BLACK MAGIC REMOVAL
           </div>
           <div className="footer-item">
             <CheckCircle2 size={16} /> BRING PEACE, HAPPINESS & SUCCESS

@@ -6,7 +6,7 @@ const SEO = ({
   description,
   type = 'website',
   url = 'https://Pandit prabhu ram.com',
-  image = 'https://Pandit prabhu ram.com/default-og.jpg',
+  image = 'https://Pandit prabhu ram.com/default-og.webp',
   schema
 }) => {
   const siteTitle = 'Pandit prabhu ram - Trusted Psychic & Spiritual Guidance';

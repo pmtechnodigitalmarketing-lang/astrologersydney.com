@@ -15,7 +15,7 @@ const allArticles = [
     desc: "An in-depth analysis of Venus afflictions, severe Mars-Rahu conjunctions, and 7th house doshas that cause recurring heartbreak�and how ethical astrology can help you overcome them. Learn to identify the karmic patterns holding you back, discover practical remedies to heal past wounds, and explore how cosmic timing plays a crucial role in manifesting a healthy, long-lasting relationship. Whether you are currently navigating a difficult separation or seeking to break a cycle of disappointment, this comprehensive guide offers the spiritual clarity you need to move forward with an open heart.",
     badge: "Deep Healing",
     category: "Love & Marriage",
-    img: "/images/1124000019581294130.jpg",
+    img: "/images/1124000019581294130.webp",
     author: "Lyra Starweaver",
     authorAvatar: "https://ui-avatars.com/api/?name=Lyra+Starweaver&background=ec4899&color=fff",
     time: "15 min read",
@@ -27,7 +27,7 @@ const allArticles = [
     desc: "Are you repeating the same toxic patterns? Learn how past-life karma dictates your current romantic life.",
     badge: "Karma",
     category: "Affairs & Karma",
-    img: "/images/karmic_debt_landscape.png",
+    img: "/images/karmic_debt_landscape.webp",
     author: "Nova Reed",
     authorAvatar: "https://ui-avatars.com/api/?name=Nova+Reed&background=1E3A8A&color=fff",
     time: "8 min read",
@@ -39,7 +39,7 @@ const allArticles = [
     desc: "Powerful mantras and astrological rituals to clear negative energy and attract your true soulmate.",
     badge: "Remedies",
     category: "Healing Remedies",
-    img: "/images/644225921742130200.jpg",
+    img: "/images/644225921742130200.webp",
     author: "Elara Moon",
     authorAvatar: "https://ui-avatars.com/api/?name=Elara+Moon&background=6b21a8&color=fff",
     time: "4 min read",
@@ -51,7 +51,7 @@ const allArticles = [
     desc: "Why 36 Gunas aren't always enough. The hidden planetary aspects that determine true marital harmony.",
     badge: "Compatibility",
     category: "Compatibility",
-    img: "/images/serene-village-landscape.jpg",
+    img: "/images/serene-village-landscape.webp",
     author: "Orion Vance",
     authorAvatar: "https://ui-avatars.com/api/?name=Orion+Vance&background=1E3A8A&color=fff",
     time: "5 min read",
@@ -63,7 +63,7 @@ const allArticles = [
     desc: "How the positioning of Rahu, Venus, and the 7th Lord can indicate a partner's wandering eye and hidden affairs.",
     badge: "Warning Signs",
     category: "Affairs & Karma",
-    img: "/images/astro-butterfly.jpg",
+    img: "/images/astro-butterfly.webp",
     author: "Nova Reed",
     authorAvatar: "https://ui-avatars.com/api/?name=Nova+Reed&background=ec4899&color=fff",
     time: "8 min read",
@@ -75,7 +75,7 @@ const allArticles = [
     desc: "Astrological guidance on when to fight for your marriage using remedies, and when the stars say it's time to walk away.",
     badge: "Healing",
     category: "Healing Remedies",
-    img: "/images/toxic-marriage-signs.jpg",
+    img: "/images/toxic-marriage-signs.webp",
     author: "Elara Moon",
     authorAvatar: "https://ui-avatars.com/api/?name=Elara+Moon&background=6b21a8&color=fff",
     time: "4 min read",
@@ -115,7 +115,7 @@ const Blog = () => {
         >
           <div 
             className="hero-bg" 
-            style={{ backgroundImage: "url('/images/relationship_astrology_hero.png')" }}
+            style={{ backgroundImage: "url('/images/relationship_astrology_hero.webp')" }}
           >
             <div className="hero-overlay"></div>
             <div className="hero-content">

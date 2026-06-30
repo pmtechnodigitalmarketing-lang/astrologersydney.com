@@ -16,7 +16,7 @@ export const astrologyServices = [
       "Protection rituals for personal peace",
       "Confidential consultation and guidance",
     ],
-    image: "/images/hex_removal.png",
+    image: "/images/hex_removal.webp",
     faqs: [
       {
         question: "Is hex removal safe?",
@@ -52,7 +52,7 @@ export const astrologyServices = [
       "Overcoming marriage obstacles",
       "Safe and ethical attraction methods",
     ],
-    image: "/images/3-months-rule-breakup.jpg",
+    image: "/images/3-months-rule-breakup.webp",
     faqs: [
       {
         question: "Is this process ethical?",
@@ -88,7 +88,7 @@ export const astrologyServices = [
       "Restoring peace and safety to your family",
       "Banishment of persistent dark attachments",
     ],
-    image: "/images/evil_spirits.png",
+    image: "/images/evil_spirits.webp",
     faqs: [
       {
         question: "How do I know if there's an evil spirit in my home?",
@@ -124,7 +124,7 @@ export const astrologyServices = [
       "Restoring physical and mental vitality",
       "Long-term spiritual fortification",
     ],
-    image: "/images/remove-negative-energy-spell.jpg",
+    image: "/images/remove-negative-energy-spell.webp",
     faqs: [
       {
         question: "Who would put black magic on me?",
@@ -160,7 +160,7 @@ export const astrologyServices = [
       "Cleansing the mind of forced thoughts",
       "Protective talismans and blessings",
     ],
-    image: "/images/voodoo.png",
+    image: "/images/voodoo.webp",
     faqs: [
       {
         question: "Can voodoo be done from a distance?",
@@ -196,7 +196,7 @@ export const astrologyServices = [
       "Unblocking financial and career paths",
       "Enhancing overall mood and positivity",
     ],
-    image: "/images/negative_energy.png",
+    image: "/images/negative_energy.webp",
     faqs: [
       {
         question: "What causes negative energy build-up?",
@@ -232,7 +232,7 @@ export const astrologyServices = [
       "Spiritual Strength: Restoring confidence and aura",
       "Inner Peace: Grounding the mind and soul",
     ],
-    image: "/images/demon_forces.png",
+    image: "/images/demon_forces.webp",
     faqs: [
       {
         question: "Is this safe?",
@@ -268,7 +268,7 @@ export const astrologyServices = [
       "Heal recurring relationship patterns",
       "Attract your soulmate",
     ],
-    image: "/images/love-relationship-advice.jpg",
+    image: "/images/love-relationship-advice.webp",
     faqs: [
       {
         question: "Can you see if my partner is 'the one'?",
@@ -304,7 +304,7 @@ export const astrologyServices = [
       "Overcome professional obstacles",
       "Maximize wealth potential",
     ],
-    image: "/images/career-astrology-reading.jpg",
+    image: "/images/career-astrology-reading.webp",
     faqs: [
       {
         question: "Can astrology predict job changes?",
@@ -340,7 +340,7 @@ export const astrologyServices = [
       "Forecast marital harmony",
       "Auspicious wedding date selection",
     ],
-    image: "/images/281543726688184.jpg",
+    image: "/images/281543726688184.webp",
     faqs: [
       {
         question: "What happens if our score is low?",
@@ -376,7 +376,7 @@ export const astrologyServices = [
       "Mental health and anxiety management",
       "Spiritual healing for physical ailments",
     ],
-    image: "/images/6825836929131189.jpg",
+    image: "/images/6825836929131189.webp",
     faqs: [
       {
         question: "Is this a substitute for a doctor?",
@@ -412,7 +412,7 @@ export const astrologyServices = [
       "Increased daily energy levels",
       "Deep emotional release",
     ],
-    image: "/images/discover-personal-energy.jpg",
+    image: "/images/discover-personal-energy.webp",
     faqs: [
       {
         question: "What does an aura cleansing feel like?",
@@ -448,7 +448,7 @@ export const astrologyServices = [
       "Improve sleep and vitality",
       "Remedies without breaking walls",
     ],
-    image: "/images/consult-best-astrologer.jpg",
+    image: "/images/consult-best-astrologer.webp",
     faqs: [
       {
         question: "Do I need to rebuild my house?",
@@ -484,7 +484,7 @@ export const astrologyServices = [
       "Protect against negative transits",
       "Authentic Vedic gemstone guidelines",
     ],
-    image: "/images/gemstone-recommendation.jpg",
+    image: "/images/gemstone-recommendation.webp",
     faqs: [
       {
         question: "Which finger should I wear my ring on?",
@@ -520,7 +520,7 @@ export const astrologyServices = [
       "Reveal hidden talents and traits",
       "Forecast major life changes",
     ],
-    image: "/images/palmistry.png",
+    image: "/images/palmistry.webp",
     faqs: [
       {
         question: "Which hand do you read?",
@@ -557,7 +557,7 @@ export const astrologyServices = [
       "Find your lucky dates and colors",
       "Understand yearly personal cycles",
     ],
-    image: "/images/birthday-life-purpose.jpg",
+    image: "/images/birthday-life-purpose.webp",
     faqs: [
       {
         question: "Can changing my name spelling change my luck?",
@@ -593,7 +593,7 @@ export const astrologyServices = [
       "Break repetitive karmic cycles",
       "Access forgotten spiritual wisdom",
     ],
-    image: "/images/past-life-regression.jpg",
+    image: "/images/past-life-regression.webp",
     faqs: [
       {
         question: "Will I get stuck in a past life?",
@@ -629,7 +629,7 @@ export const astrologyServices = [
       "Overcome sleep anxiety and nightmares",
       "Connect with spirit guides",
     ],
-    image: "/images/dream-interpretation.jpg",
+    image: "/images/dream-interpretation.webp",
     faqs: [
       {
         question: "What do falling dreams mean?",
