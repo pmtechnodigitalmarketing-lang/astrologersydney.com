@@ -49,6 +49,13 @@ const heroContent = [
 
 export function ClassicHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [loadedSlides, setLoadedSlides] = useState([0]);
+
+  useEffect(() => {
+    if (!loadedSlides.includes(currentSlide)) {
+      setLoadedSlides((prev) => [...prev, currentSlide]);
+    }
+  }, [currentSlide, loadedSlides]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -65,7 +72,7 @@ export function ClassicHero() {
           <img
             key={`bg-${index}`}
             className={`classic-hero-bg-slide ${index === currentSlide ? 'active' : ''}`}
-            src={slide.image}
+            src={loadedSlides.includes(index) ? slide.image : undefined}
             alt={slide.title}
             width="1920"
             height="1080"
