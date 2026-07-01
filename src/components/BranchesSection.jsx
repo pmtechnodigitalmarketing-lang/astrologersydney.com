@@ -81,6 +81,9 @@ const BranchesSection = () => {
                   src={branch.image}
                   alt={branch.city}
                   className="accordion-image"
+                  loading="lazy"
+                  width="600"
+                  height="800"
                 />
                 <div className="accordion-overlay"></div>
 

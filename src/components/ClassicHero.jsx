@@ -67,6 +67,10 @@ export function ClassicHero() {
             className={`classic-hero-bg-slide ${index === currentSlide ? 'active' : ''}`}
             src={slide.image}
             alt={slide.title}
+            width="1920"
+            height="1080"
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchpriority={index === 0 ? "high" : "auto"}
           />
         ))}
       </div>

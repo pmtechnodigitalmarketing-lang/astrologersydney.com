@@ -42,7 +42,7 @@ const CardCarousel = ({ services, onServiceClick }) => {
             >
               <div className="carousel-image-wrapper">
                 <div className="carousel-image-glow"></div>
-                <img src={service.image} alt={service.title} />
+                <img src={service.image} alt={service.title} loading="lazy" width="600" height="600" />
               </div>
               <h3>{service.title}</h3>
               <p className="carousel-desc">{service.description.length > 90 ? service.description.substring(0, 90) + '...' : service.description}</p>

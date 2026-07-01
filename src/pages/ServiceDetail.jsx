@@ -57,7 +57,7 @@ const ServiceDetail = () => {
         >
           <div className="sd-split-layout">
             <div className="sd-image-col">
-              <img src={service.image} alt={service.title} className="sd-service-img" />
+              <img src={service.image} alt={service.title} className="sd-service-img" width="800" height="600" fetchpriority="high" />
 
               <div className="glass-panel action-card mt-5">
                 <div className="sd-rating mb-4">

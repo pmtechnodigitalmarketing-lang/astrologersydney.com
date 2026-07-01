@@ -68,7 +68,7 @@ const TarotCard = ({ service, index }) => {
           style={{ backgroundPositionX: hologramX, backgroundPositionY: hologramY }}
         />
         <div className="tarot-image-container">
-          <img src={service.image} alt={service.title} />
+          <img src={service.image} alt={service.title} loading="lazy" width="800" height="600" />
         </div>
         <div className="tarot-content">
           <h3>{service.title}</h3>

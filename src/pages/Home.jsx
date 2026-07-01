@@ -223,7 +223,7 @@ const Home = () => {
               </button>
 
               <div className="modal-image-wrapper">
-                <img src={selectedService.image} alt={selectedService.title} />
+                <img src={selectedService.image} alt={selectedService.title} loading="lazy" width="600" height="600" />
               </div>
 
               <div className="modal-text-content">

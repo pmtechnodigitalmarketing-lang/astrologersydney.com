@@ -28,7 +28,7 @@ const TestimonialsSection = ({ customReviews }) => {
               </div>
               <p className="review-text">"{review.text}"</p>
               <div className="review-author">
-                <img src={review.image} alt={review.name} className="author-image" />
+                <img src={review.image} alt={review.name} className="author-image" loading="lazy" width="60" height="60" />
                 <span>{review.name}</span>
               </div>
             </div>
@@ -41,7 +41,7 @@ const TestimonialsSection = ({ customReviews }) => {
               </div>
               <p className="review-text">"{review.text}"</p>
               <div className="review-author">
-                <img src={review.image} alt={review.name} className="author-image" />
+                <img src={review.image} alt={review.name} className="author-image" loading="lazy" width="60" height="60" />
                 <span>{review.name}</span>
               </div>
             </div>
