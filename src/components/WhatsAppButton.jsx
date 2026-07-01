@@ -7,7 +7,7 @@ const WhatsAppButton = () => {
     <div className="floating-contact-group">
       {/* Email Button */}
       <motion.a 
-        href="mailto:info@soulastrologycentre.com.au"
+        href="mailto:masterjai999@gmail.com"
         className="contact-float email-float"
         whileHover={{ scale: 1.1, x: 5 }}
         whileTap={{ scale: 0.9 }}

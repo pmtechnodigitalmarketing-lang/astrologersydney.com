@@ -14,8 +14,16 @@ const Footer = () => {
             Guiding your cosmic journey with premium Vedic astrology, deep insights, and spiritual clarity.
           </p>
           <div className="contact-info mt-sm">
-            <p><span className="material-symbols-outlined text-primary">mail</span> masterjai999@gmail.com</p>
-            <p><span className="material-symbols-outlined text-primary">phone</span> +61 450 144 999</p>
+            <p>
+              <a href="mailto:masterjai999@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>
+                <span className="material-symbols-outlined text-primary">mail</span> masterjai999@gmail.com
+              </a>
+            </p>
+            <p>
+              <a href="tel:+61450144999" style={{ color: 'inherit', textDecoration: 'none' }}>
+                <span className="material-symbols-outlined text-primary">phone</span> +61 450 144 999
+              </a>
+            </p>
           </div>
 
           <div className="social-links mt-md">
