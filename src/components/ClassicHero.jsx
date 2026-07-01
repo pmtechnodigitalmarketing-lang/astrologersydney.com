@@ -69,16 +69,20 @@ export function ClassicHero() {
       {/* Banner Images */}
       <div className="banner-images-wrapper">
         {heroContent.map((slide, index) => (
-          <img
-            key={`bg-${index}`}
-            className={`classic-hero-bg-slide ${index === currentSlide ? 'active' : ''}`}
-            src={loadedSlides.includes(index) ? slide.image : undefined}
-            alt={slide.title}
-            width="1920"
-            height="1080"
-            loading={index === 0 ? "eager" : "lazy"}
-            fetchpriority={index === 0 ? "high" : "auto"}
-          />
+          loadedSlides.includes(index) ? (
+            <img
+              key={`bg-${index}`}
+              className={`classic-hero-bg-slide ${index === currentSlide ? 'active' : ''}`}
+              src={slide.image}
+              alt={slide.title}
+              width="1920"
+              height="1080"
+              loading={index === 0 ? "eager" : "lazy"}
+              fetchpriority={index === 0 ? "high" : "auto"}
+            />
+          ) : (
+            <div key={`bg-${index}`} className={`classic-hero-bg-slide ${index === currentSlide ? 'active' : ''}`} />
+          )
         ))}
       </div>
 
