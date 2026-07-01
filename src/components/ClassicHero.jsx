@@ -16,7 +16,6 @@ const heroContent = [
       "Feeling lonely, stressed, or heartbroken"
     ],
     image: "/images/Master Jai Bn-1.webp",
-    mobileImage: "/images/image copy.webp",
   },
   {
     title: "BLACK MAGIC REMOVAL",
@@ -31,7 +30,6 @@ const heroContent = [
       "Bad dreams & restless sleep"
     ],
     image: "/images/Master Jai Bn-3.webp",
-    mobileImage: "/images/image copy 3.webp",
   },
   {
     title: "SOLVE LOVE PROBLEMS",
@@ -46,19 +44,11 @@ const heroContent = [
       "Divorce or separation threats"
     ],
     image: "/images/Master Jai Bn-2.webp",
-    mobileImage: "/images/image copy 2.webp",
   }
 ];
 
 export function ClassicHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 992);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -75,7 +65,7 @@ export function ClassicHero() {
           <img
             key={`bg-${index}`}
             className={`classic-hero-bg-slide ${index === currentSlide ? 'active' : ''}`}
-            src={isMobile && slide.mobileImage ? slide.mobileImage : slide.image}
+            src={slide.image}
             alt={slide.title}
           />
         ))}
