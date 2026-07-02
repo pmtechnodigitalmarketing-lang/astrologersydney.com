@@ -159,6 +159,7 @@ const Blog = () => {
                   src="https://ui-avatars.com/api/?name=Lyra+Starweaver&background=ec4899&color=fff" 
                   alt="Lyra Starweaver" 
                   className="author-avatar" 
+                  loading="lazy"
                 />
                 <div>
                   <p className="author-name">Lyra Starweaver</p>
@@ -223,6 +224,7 @@ const Blog = () => {
                     src={allArticles[0].img} 
                     alt={allArticles[0].title} 
                     className="article-img" 
+                    loading="lazy"
                   />
                   <div className="article-badge" style={{ backgroundColor: "var(--color-primary)", color: "#fff", border: "none" }}>{allArticles[0].badge}</div>
                 </div>
@@ -234,7 +236,7 @@ const Blog = () => {
                   
                   <div className="article-footer">
                     <div className="author-info-small">
-                      <img src={allArticles[0].authorAvatar} alt={allArticles[0].author} className="author-avatar-small" style={{ width: "36px", height: "36px" }} />
+                      <img src={allArticles[0].authorAvatar} alt={allArticles[0].author} className="author-avatar-small" style={{ width: "36px", height: "36px" }} loading="lazy" />
                       <span className="author-name-small" style={{ fontSize: "1.1rem" }}>{allArticles[0].author}</span>
                     </div>
                     <span className="article-time" style={{ fontSize: "1.1rem" }}>{allArticles[0].time}</span>
@@ -255,6 +257,7 @@ const Blog = () => {
                         src={article.img} 
                         alt={article.title} 
                         className="article-img" 
+                        loading="lazy"
                       />
                       <div className="article-badge">{article.badge}</div>
                     </div>
@@ -263,7 +266,7 @@ const Blog = () => {
                       <p className="article-desc">{article.desc}</p>
                       <div className="article-footer">
                         <div className="author-info-small">
-                          <img src={article.authorAvatar} alt={article.author} className="author-avatar-small" />
+                          <img src={article.authorAvatar} alt={article.author} className="author-avatar-small" loading="lazy" />
                           <span className="author-name-small">{article.author}</span>
                         </div>
                         <span className="article-time">{article.time}</span>
@@ -297,6 +300,7 @@ const Blog = () => {
                       src={article.img} 
                       alt={article.title} 
                       className="article-img" 
+                      loading="lazy"
                     />
                     <div className="article-badge">{article.badge}</div>
                   </div>
@@ -306,7 +310,7 @@ const Blog = () => {
                     
                     <div className="article-footer">
                       <div className="author-info-small">
-                        <img src={article.authorAvatar} alt={article.author} className="author-avatar-small" />
+                        <img src={article.authorAvatar} alt={article.author} className="author-avatar-small" loading="lazy" />
                         <span className="author-name-small">{article.author}</span>
                       </div>
                       <span className="article-time">{article.time}</span>
@@ -332,6 +336,7 @@ const Blog = () => {
                       src={article.img} 
                       alt={article.title} 
                       className="article-img" 
+                      loading="lazy"
                     />
                     <div className="article-badge">{article.badge}</div>
                   </div>
@@ -340,7 +345,7 @@ const Blog = () => {
                     <p className="article-desc">{article.desc}</p>
                     <div className="article-footer">
                       <div className="author-info-small">
-                        <img src={article.authorAvatar} alt={article.author} className="author-avatar-small" />
+                        <img src={article.authorAvatar} alt={article.author} className="author-avatar-small" loading="lazy" />
                         <span className="author-name-small">{article.author}</span>
                       </div>
                       <span className="article-time">{article.time}</span>

@@ -66,6 +66,7 @@ export function ExpandableCard({
                     src={src}
                     alt={title}
                     className="expandable-modal-image"
+                    loading="lazy"
                   />
                 </div>
               </motion.div>
@@ -133,6 +134,7 @@ export function ExpandableCard({
               src={src}
               alt={title}
               className="expandable-trigger-image"
+              loading="lazy"
             />
           </motion.div>
           <div className="expandable-trigger-footer">
