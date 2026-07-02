@@ -45,7 +45,10 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (
       !formData.name ||
@@ -56,8 +59,39 @@ const Contact = () => {
       alert("Please fill out all fields.");
       return;
     }
-    setIsSubmitted(true);
-    setFormData({ name: "", email: "", service: "", message: "" });
+    
+    setIsSubmitting(true);
+    setErrorMsg("");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "YOUR_CLIENTS_ACCESS_KEY_HERE",
+          name: formData.name,
+          email: formData.email,
+          service: formData.service,
+          message: formData.message,
+        }),
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", service: "", message: "" });
+      } else {
+        setErrorMsg(result.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setErrorMsg("Failed to send message. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -334,11 +368,22 @@ const Contact = () => {
                       required
                     ></textarea>
                   </div>
-                  <button type="submit" className="contact-submit-btn">
-                    <span className="btn-text">Send Transmission</span>
-                    <span className="material-symbols-outlined btn-arrow">
-                      send
-                    </span>
+                  {errorMsg && (
+                    <div style={{ color: '#ff4d4f', marginTop: '1rem', fontSize: '0.9rem', textAlign: 'center' }}>
+                      {errorMsg}
+                    </div>
+                  )}
+                  <button type="submit" className="contact-submit-btn" disabled={isSubmitting} style={{ opacity: isSubmitting ? 0.7 : 1 }}>
+                    {isSubmitting ? (
+                      <span className="btn-text">Transmitting...</span>
+                    ) : (
+                      <>
+                        <span className="btn-text">Send Transmission</span>
+                        <span className="material-symbols-outlined btn-arrow">
+                          send
+                        </span>
+                      </>
+                    )}
                   </button>
                 </form>
               )}
