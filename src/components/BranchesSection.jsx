@@ -5,7 +5,7 @@ import "./BranchesSection.css";
 const branches = [
   {
     id: "sydney",
-    city: "Sydney HQ",
+    city: "Sydney",
     phone: "+61 450 144 999",
     image: "/images/locations/sydney_landmark_1781159154031.webp",
     icon: "location_city",

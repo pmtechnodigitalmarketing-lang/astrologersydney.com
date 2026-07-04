@@ -29,7 +29,7 @@ const heroContent = [
       "Relationship problems & fights",
       "Bad dreams & restless sleep"
     ],
-    image: "/images/Master Jai Bn-3.webp",
+    image: "/images/Master jai bn-1.jpg.jpeg",
   },
   {
     title: "SOLVE LOVE PROBLEMS",

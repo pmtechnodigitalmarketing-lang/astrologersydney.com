@@ -469,37 +469,37 @@ export const astrologyServices = [
   },
   {
     id: 16,
-    slug: "gemstone-recommendation",
-    title: "Gemstone Recommendation",
+    slug: "date-of-birth-reading",
+    title: "Date of Birth Reading",
     description:
-      "Personalized gemstone advice to amplify positive planetary effects and shield against malefic influences based on your exact birth chart.",
+      "Unlock the secrets of your destiny hidden within your exact date of birth to reveal your life path, strengths, and future opportunities.",
     longDescription: [
-      "Vedic astrology recognizes that planetary energies directly influence our physical and subtle bodies through color and light frequencies. Precious gemstones act as powerful cosmic receivers, capable of absorbing and transmitting the beneficial rays of specific planets. When worn correctly, they can dramatically elevate your fortune, health, and confidence.",
-      "However, gemstone therapy is a precise science. Wearing the stone of a malefic or antagonistic planet in your chart can actually amplify your problems. Our Gemstone Recommendation service involves a deep analysis of your birth chart to identify your most beneficial, life-supporting planets. We then recommend the exact gem, weight, and quality required to harness that planetary power.",
-      "Beyond just the recommendation, we guide you through the critical process of purification and energization (Pran Pratishtha). A gemstone is merely a beautiful rock until it is spiritually awakened with the correct Vedic mantras. We provide the exact instructions on which metal to use, which finger to wear it on, and the most auspicious day and time to put it on for the first time.",
+      "Your date of birth is not just a random number; it is a cosmic code that contains the blueprint of your entire life. In Vedic traditions, the specific time and day you were born hold the key to understanding your core personality, hidden talents, and life purpose. A Date of Birth Reading decodes these celestial patterns to give you profound clarity.",
+      "Through a deep analysis of your numerological and astrological details, we uncover the dominant energies shaping your destiny. We examine your life path number, destiny number, and soul urge number to help you navigate critical decisions in your career, relationships, and personal growth. Knowing your true cosmic alignment allows you to stop fighting against the current and start flowing with your natural strengths.",
+      "Whether you are facing a crossroads in life or simply seeking a deeper understanding of who you are, this reading provides actionable insights. We highlight your most auspicious periods for new ventures, warn you about potential challenges, and offer spiritual remedies to balance any discordant energies in your birth chart.",
     ],
     benefits: [
-      "Strengthen weak beneficial planets",
-      "Attract luck and prosperity",
-      "Protect against negative transits",
-      "Authentic Vedic gemstone guidelines",
+      "Discover your true life purpose",
+      "Understand your core personality traits",
+      "Identify auspicious periods for success",
+      "Navigate life challenges with clarity",
     ],
-    image: "/images/gemstone-recommendation.webp",
+    image: "/images/Birth Chart Reading.jpg",
     faqs: [
       {
-        question: "Which finger should I wear my ring on?",
+        question: "Do I need my exact time of birth?",
         answer:
-          "Each planet corresponds to a specific finger and metal. We provide precise instructions for wearing your gem.",
+          "While an exact time provides the most detailed astrological chart, a comprehensive numerological and general astrological reading can still be performed using just your date of birth.",
       },
       {
-        question: "Do I need to energize the stone?",
+        question: "How is this different from a full horoscope reading?",
         answer:
-          "Yes, a gemstone is just a rock until it is properly cleansed and energized with specific Vedic mantras.",
+          "A Date of Birth reading focuses heavily on the numerological significance and planetary positions of that specific day, offering a focused overview of your life's blueprint.",
       },
       {
-        question: "Can a wrong gemstone harm me?",
+        question: "Can this reading predict my future?",
         answer:
-          "Absolutely. Wearing the gemstone of a malefic planet can amplify problems. Never wear gems without expert advice.",
+          "It reveals the potential trajectories and cycles of your life. While it highlights opportunities and challenges, your free will always plays a role in shaping your actual future.",
       },
     ],
   },
