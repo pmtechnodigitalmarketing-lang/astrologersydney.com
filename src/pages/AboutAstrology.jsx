@@ -67,7 +67,16 @@ const AboutAstrology = () => {
             transition={{ duration: 1 }}
           >
             <div className="master-image-glow"></div>
-            <img loading="lazy" src="/images/163114817763752088.webp" alt="Our Lead Astrologer" />
+            <img 
+              loading="lazy" 
+              decoding="async"
+              src="/images/163114817763752088.webp" 
+              srcSet="/images/163114817763752088-200.webp 200w, /images/163114817763752088-300.webp 300w, /images/163114817763752088-400.webp 400w, /images/163114817763752088-600.webp 600w"
+              sizes="(max-width: 768px) 288px, 300px"
+              width="400"
+              height="400"
+              alt="Our Lead Astrologer" 
+            />
           </motion.div>
 
           <motion.div

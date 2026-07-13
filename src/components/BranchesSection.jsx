@@ -117,4 +117,4 @@ const BranchesSection = () => {
   );
 };
 
-export default BranchesSection;
+export default React.memo(BranchesSection);

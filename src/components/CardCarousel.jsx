@@ -10,6 +10,12 @@ import 'swiper/css/navigation';
 import './CardCarousel.css';
 
 const CardCarousel = ({ services, onServiceClick }) => {
+  const getSrcSet = (imagePath) => {
+    if (!imagePath) return '';
+    const base = imagePath.substring(0, imagePath.lastIndexOf('.'));
+    return `${base}-200.webp 200w, ${base}-300.webp 300w, ${base}-400.webp 400w, ${base}-600.webp 600w`;
+  };
+
   return (
     <div className="carousel-wrapper">
       <Swiper
@@ -17,7 +23,13 @@ const CardCarousel = ({ services, onServiceClick }) => {
         grabCursor={true}
         centeredSlides={true}
         loop={true}
-        slidesPerView={'auto'}
+        breakpoints={{
+          320: { slidesPerView: 1, spaceBetween: 20 },
+          768: { slidesPerView: 2, spaceBetween: 30 },
+          1024: { slidesPerView: 3, spaceBetween: 40 },
+        }}
+        observer={false}
+        observeParents={false}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
@@ -42,7 +54,16 @@ const CardCarousel = ({ services, onServiceClick }) => {
             >
               <div className="carousel-image-wrapper">
                 <div className="carousel-image-glow"></div>
-                <img src={service.image} alt={service.title} loading="lazy" width="600" height="600" />
+                <img 
+                  src={service.image} 
+                  srcSet={getSrcSet(service.image)}
+                  sizes="(max-width: 768px) 288px, 300px"
+                  alt={service.title} 
+                  loading="lazy" 
+                  decoding="async"
+                  width="600" 
+                  height="600" 
+                />
               </div>
               <h3>{service.title}</h3>
               <p className="carousel-desc">{service.description.length > 90 ? service.description.substring(0, 90) + '...' : service.description}</p>
@@ -65,4 +86,4 @@ const CardCarousel = ({ services, onServiceClick }) => {
   );
 };
 
-export default CardCarousel;
+export default React.memo(CardCarousel);

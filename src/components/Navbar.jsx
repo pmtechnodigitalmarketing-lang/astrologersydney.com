@@ -75,8 +75,13 @@ const Navbar = () => {
     <header className="navbar glass-panel">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <img src="/images/MJ Logo.png" alt="Soul Astrology Centre Logo" className="navbar-logo-img" width="200" height="75" />
-
+          <img
+            src="/images/MJ-Logo-opt.webp"
+            alt="Soul Astrology Centre Logo"
+            className="navbar-logo-img"
+            width="250"
+            height="94"
+          />
         </Link>
         
         {/* Mobile Menu Toggle Button */}

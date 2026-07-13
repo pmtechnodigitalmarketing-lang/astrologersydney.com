@@ -98,6 +98,12 @@ const Blog = () => {
 
   const isFiltering = activeFilter !== "All" || searchQuery !== "";
 
+  const getSrcSet = (imagePath) => {
+    if (!imagePath) return '';
+    const base = imagePath.substring(0, imagePath.lastIndexOf('.'));
+    return `${base}-200.webp 200w, ${base}-300.webp 300w, ${base}-400.webp 400w, ${base}-600.webp 600w`;
+  };
+
   return (
     <div className="blog-layout">
       <SEO 
@@ -222,9 +228,14 @@ const Blog = () => {
                 <div className="article-img-wrapper" style={{ height: "400px" }}>
                   <img 
                     src={allArticles[0].img} 
+                    srcSet={getSrcSet(allArticles[0].img)}
+                    sizes="(max-width: 768px) 100vw, 800px"
                     alt={allArticles[0].title} 
                     className="article-img" 
                     loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="400"
                   />
                   <div className="article-badge" style={{ backgroundColor: "var(--color-primary)", color: "#fff", border: "none" }}>{allArticles[0].badge}</div>
                 </div>
@@ -255,9 +266,14 @@ const Blog = () => {
                     <div className="article-img-wrapper" style={{ height: "180px" }}>
                       <img 
                         src={article.img} 
+                        srcSet={getSrcSet(article.img)}
+                        sizes="(max-width: 768px) 288px, 300px"
                         alt={article.title} 
                         className="article-img" 
                         loading="lazy"
+                        decoding="async"
+                        width="400"
+                        height="180"
                       />
                       <div className="article-badge">{article.badge}</div>
                     </div>
@@ -298,9 +314,14 @@ const Blog = () => {
                   <div className="article-img-wrapper">
                     <img 
                       src={article.img} 
+                      srcSet={getSrcSet(article.img)}
+                      sizes="(max-width: 768px) 288px, 300px"
                       alt={article.title} 
                       className="article-img" 
                       loading="lazy"
+                      decoding="async"
+                      width="400"
+                      height="250"
                     />
                     <div className="article-badge">{article.badge}</div>
                   </div>
@@ -334,9 +355,14 @@ const Blog = () => {
                   <div className="article-img-wrapper">
                     <img 
                       src={article.img} 
+                      srcSet={getSrcSet(article.img)}
+                      sizes="(max-width: 768px) 288px, 300px"
                       alt={article.title} 
                       className="article-img" 
                       loading="lazy"
+                      decoding="async"
+                      width="400"
+                      height="250"
                     />
                     <div className="article-badge">{article.badge}</div>
                   </div>

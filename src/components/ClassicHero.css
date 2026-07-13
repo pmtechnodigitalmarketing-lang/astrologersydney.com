@@ -10,7 +10,12 @@
 .banner-images-wrapper {
   position: relative;
   width: 100%;
-  display: flex;
+  overflow: hidden;
+}
+
+.banner-images-wrapper picture {
+  width: 100%;
+  display: block;
 }
 
 .classic-hero-bg-slide {
@@ -204,6 +209,7 @@
   color: #e2c07a;
   background: linear-gradient(to bottom, #fff, #e2c07a);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1;
   margin-bottom: 0.8rem;
@@ -428,9 +434,6 @@
 }
 
 @media (max-width: 992px) {
-  .classic-hero-bg-slide {
-    /* No longer needed for img */
-  }
 
   .classic-hero-section {
     height: auto;

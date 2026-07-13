@@ -32,23 +32,23 @@ function App() {
         <div className="cosmic-bg"></div>
         <Navbar />
         <WhatsAppButton />
-        <main className="main-content">
-            <Suspense fallback={<div className="flex-center text-primary">Loading...</div>}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/constellation/:id" element={<ConstellationDetail />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/service/:serviceSlug" element={<ServiceDetail />} />
-                <Route path="/locations" element={<Locations />} />
-                <Route path="/location/:stateName" element={<LocationServices />} />
-                <Route path="/info/about-astrology" element={<AboutAstrology />} />
-                <Route path="/contact" element={<Contact />} />
-              </Routes>
-            </Suspense>
+        <Suspense fallback={<div className="flex-center text-primary" style={{ minHeight: '100vh' }}>Loading...</div>}>
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/constellation/:id" element={<ConstellationDetail />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/service/:serviceSlug" element={<ServiceDetail />} />
+              <Route path="/locations" element={<Locations />} />
+              <Route path="/location/:stateName" element={<LocationServices />} />
+              <Route path="/info/about-astrology" element={<AboutAstrology />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
           </main>
           <Footer />
-        </div>
+        </Suspense>
+      </div>
       </Router>
   );
 }

@@ -15,7 +15,7 @@ const heroContent = [
       "Trust issues and emotional distance",
       "Feeling lonely, stressed, or heartbroken"
     ],
-    image: "/images/Master Jai Bn-1.webp",
+    image: "/images/Master-Jai-Bn-1.webp",
   },
   {
     title: "BLACK MAGIC REMOVAL",
@@ -29,7 +29,7 @@ const heroContent = [
       "Relationship problems & fights",
       "Bad dreams & restless sleep"
     ],
-    image: "/images/Master jai bn-1.jpg.jpeg",
+    image: "/images/Master-Jai-Bn-1.jpg.jpeg",
   },
   {
     title: "SOLVE LOVE PROBLEMS",
@@ -43,11 +43,11 @@ const heroContent = [
       "One-sided love or rejection",
       "Divorce or separation threats"
     ],
-    image: "/images/Master Jai Bn-2.webp",
+    image: "/images/Master-Jai-Bn-2.webp",
   }
 ];
 
-export function ClassicHero() {
+export const ClassicHero = React.memo(() => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loadedSlides, setLoadedSlides] = useState([0]);
 
@@ -64,22 +64,31 @@ export function ClassicHero() {
     return () => clearInterval(timer);
   }, []);
 
+  const getSrcSet = (imagePath) => {
+    const base = encodeURI(imagePath.substring(0, imagePath.lastIndexOf('.')));
+    return `${base}-480.webp 480w, ${base}-640.webp 640w, ${base}-768.webp 768w, ${base}-960.webp 960w, ${base}-1200.webp 1200w`;
+  };
+
   return (
     <section className="classic-hero-section poster-layout">
       {/* Banner Images */}
       <div className="banner-images-wrapper">
         {heroContent.map((slide, index) => (
           loadedSlides.includes(index) ? (
-            <img
-              key={`bg-${index}`}
-              className={`classic-hero-bg-slide ${index === currentSlide ? 'active' : ''}`}
-              src={slide.image}
-              alt={slide.title}
-              width="1920"
-              height="1080"
-              loading={index === 0 ? "eager" : "lazy"}
-              fetchpriority={index === 0 ? "high" : "auto"}
-            />
+            <picture key={`bg-${index}`}>
+              <img
+                className={`classic-hero-bg-slide ${index === currentSlide ? 'active' : ''}`}
+                src={slide.image}
+                srcSet={getSrcSet(slide.image)}
+                sizes="100vw"
+                alt={slide.title}
+                width="1920"
+                height="1080"
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchpriority={index === 0 ? "high" : "auto"}
+                decoding="async"
+              />
+            </picture>
           ) : (
             <div key={`bg-${index}`} className={`classic-hero-bg-slide ${index === currentSlide ? 'active' : ''}`} />
           )
@@ -99,4 +108,4 @@ export function ClassicHero() {
       </div>
     </section>
   );
-}
+});

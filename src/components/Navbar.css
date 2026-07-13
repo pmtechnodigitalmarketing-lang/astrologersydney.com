@@ -321,8 +321,16 @@
   border: none;
   color: var(--color-primary, #7C3AED);
   cursor: pointer;
-  padding: 8px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
   z-index: 110;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-toggle .material-symbols-outlined {
+  overflow: hidden;
 }
 
 @media (max-width: 1024px) {

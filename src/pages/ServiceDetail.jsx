@@ -40,6 +40,12 @@ const ServiceDetail = () => {
     "serviceType": "Spiritual Guidance"
   };
 
+  const getSrcSet = (imagePath) => {
+    if (!imagePath) return '';
+    const base = imagePath.substring(0, imagePath.lastIndexOf('.'));
+    return `${base}-200.webp 200w, ${base}-300.webp 300w, ${base}-400.webp 400w, ${base}-600.webp 600w`;
+  };
+
   return (
     <div className="premium-service-detail">
       <SEO
@@ -57,7 +63,18 @@ const ServiceDetail = () => {
         >
           <div className="sd-split-layout">
             <div className="sd-image-col">
-              <img src={service.image} alt={service.title} className="sd-service-img" width="800" height="600" fetchpriority="high" />
+              <img 
+                src={service.image} 
+                srcSet={getSrcSet(service.image)}
+                sizes="(max-width: 768px) 100vw, 600px"
+                alt={service.title} 
+                className="sd-service-img" 
+                width="800" 
+                height="600" 
+                fetchpriority="high"
+                loading="eager"
+                decoding="async"
+              />
 
               <div className="glass-panel action-card mt-5">
                 <div className="sd-rating mb-4">

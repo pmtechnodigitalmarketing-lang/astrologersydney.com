@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { astrologyServices } from '../data/servicesData';
@@ -14,7 +14,7 @@ const servicesFaqs = [
 ];
 
 // Tarot Card Component with 3D Tilt & Holographic Effect
-const TarotCard = ({ service, index }) => {
+const TarotCard = React.memo(({ service, index }) => {
   const navigate = useNavigate();
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -29,12 +29,18 @@ const TarotCard = ({ service, index }) => {
   const hologramX = useTransform(mouseXSpring, [-0.5, 0.5], ["100%", "0%"]);
   const hologramY = useTransform(mouseYSpring, [-0.5, 0.5], ["100%", "0%"]);
 
+  // Cache the rect to prevent layout thrashing on mouse move
+  const rectRef = useRef(null);
+
+  const handleMouseEnter = (e) => {
+    rectRef.current = e.currentTarget.getBoundingClientRect();
+  };
+
   const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
+    if (!rectRef.current) return;
+    const { width, height, left, top } = rectRef.current;
+    const mouseX = e.clientX - left;
+    const mouseY = e.clientY - top;
     const xPct = mouseX / width - 0.5;
     const yPct = mouseY / height - 0.5;
     x.set(xPct);
@@ -42,13 +48,21 @@ const TarotCard = ({ service, index }) => {
   };
 
   const handleMouseLeave = () => {
+    rectRef.current = null;
     x.set(0);
     y.set(0);
+  };
+
+  const getSrcSet = (imagePath) => {
+    if (!imagePath) return '';
+    const base = imagePath.substring(0, imagePath.lastIndexOf('.'));
+    return `${base}-200.webp 200w, ${base}-300.webp 300w, ${base}-400.webp 400w, ${base}-600.webp 600w`;
   };
 
   return (
     <motion.div
       onClick={() => navigate(`/service/${service.slug}`)}
+      onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
@@ -68,7 +82,16 @@ const TarotCard = ({ service, index }) => {
           style={{ backgroundPositionX: hologramX, backgroundPositionY: hologramY }}
         />
         <div className="tarot-image-container">
-          <img src={service.image} alt={service.title} loading="lazy" width="800" height="600" />
+          <img 
+            src={service.image} 
+            srcSet={getSrcSet(service.image)}
+            sizes="(max-width: 768px) 288px, 300px"
+            alt={service.title} 
+            loading="lazy" 
+            decoding="async"
+            width="800" 
+            height="600" 
+          />
         </div>
         <div className="tarot-content">
           <h3>{service.title}</h3>
@@ -80,7 +103,7 @@ const TarotCard = ({ service, index }) => {
       </div>
     </motion.div>
   );
-};
+});
 
 const Services = () => {
   useEffect(() => {
