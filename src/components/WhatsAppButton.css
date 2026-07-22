@@ -25,6 +25,11 @@
 
 .contact-float:hover {
   width: 65px;
+  transform: scale(1.1) translateX(5px);
+}
+
+.contact-float:active {
+  transform: scale(0.9);
 }
 
 .contact-float::before {

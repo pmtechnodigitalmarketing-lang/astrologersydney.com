@@ -1,8 +1,9 @@
 import React, { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
+
+const Footer = lazy(() => import('./components/Footer'));
+const WhatsAppButton = lazy(() => import('./components/WhatsAppButton'));
 
 const Home = lazy(() => import('./pages/Home'));
 const Blog = lazy(() => import('./pages/Blog'));
@@ -31,8 +32,8 @@ function App() {
       <div className="app-container">
         <div className="cosmic-bg"></div>
         <Navbar />
-        <WhatsAppButton />
         <Suspense fallback={<div className="flex-center text-primary" style={{ minHeight: '100vh' }}>Loading...</div>}>
+          <WhatsAppButton />
           <main className="main-content">
             <Routes>
               <Route path="/" element={<Home />} />
