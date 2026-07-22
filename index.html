@@ -27,60 +27,40 @@
     <meta name="google-site-verification" content="GCt-LdExv6HW2sOu3K28jmAbq6y3-L5hYkElmYkcXtc" />
   </head>
   <body>
-    <div id="root">
       <style>
         /* Minimal critical CSS for pre-render */
         body { margin: 0; background-color: #0f0c29; font-family: sans-serif; }
-        .app-container { min-height: 100vh; display: flex; flex-direction: column; position: relative; }
-        .cosmic-bg { position: fixed; inset: 0; z-index: -1; background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); }
-        .navbar { position: fixed; top: 10px; left: 0; right: 0; z-index: 100; max-width: 99.5%; margin: 0 auto; background: rgba(255, 255, 255, 0.95); border-radius: 50px; padding: 10px 30px; display: flex; justify-content: space-between; align-items: center; min-height: 95px; box-sizing: border-box; }
-        .navbar-logo-img { height: 95px; width: auto; }
-        .mobile-menu-toggle { background: none; border: none; }
-        .classic-hero-section { position: relative; width: 100%; height: 100vh; overflow: hidden; }
-        .banner-images-wrapper { position: absolute; inset: 0; }
-        .classic-hero-bg-slide { width: 100%; height: 100%; object-fit: cover; }
+        #lcp-skeleton { position: fixed; inset: 0; z-index: 1000; background: #0f0c29; display: flex; flex-direction: column; }
+        .skeleton-navbar { padding: 10px 30px; display: flex; justify-content: space-between; align-items: center; min-height: 95px; background: rgba(255, 255, 255, 0.95); margin: 10px auto 0; width: 99.5%; border-radius: 50px; box-sizing: border-box; }
+        .skeleton-logo { height: 95px; }
+        .skeleton-hero { flex: 1; position: relative; width: 100%; margin-top: -105px; z-index: -1; }
+        .skeleton-img { width: 100%; height: 100%; object-fit: cover; }
         @media (min-width: 1024px) {
-          .navbar { top: 5px; width: 96%; max-width: 1600px; padding: 5px 24px; min-height: auto; }
-          .navbar-logo-img { height: 60px; }
-          .mobile-menu-toggle { display: none; }
+          .skeleton-navbar { top: 5px; width: 96%; max-width: 1600px; padding: 5px 24px; min-height: auto; }
+          .skeleton-logo { height: 60px; }
         }
       </style>
-      <div class="app-container">
-        <div class="cosmic-bg"></div>
-        <header class="navbar glass-panel">
-          <div class="navbar-container" style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
-            <a href="/" class="navbar-logo">
-              <img src="/images/MJ-Logo-opt.webp" alt="Soul Astrology Centre Logo" class="navbar-logo-img" width="250" height="94">
-            </a>
-            <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
-              <span class="material-symbols-outlined" style="font-size: 24px;">menu</span>
-            </button>
-          </div>
+      <div id="lcp-skeleton">
+        <header class="skeleton-navbar">
+          <img src="/images/MJ-Logo-opt.webp" alt="Logo" class="skeleton-logo" width="250" height="94">
         </header>
-        <main class="main-content">
-          <div class="home-container">
-            <section class="classic-hero-section poster-layout">
-              <div class="banner-images-wrapper">
-                <picture>
-                  <img
-                    class="classic-hero-bg-slide active"
-                    src="/images/Master-Jai-Bn-1.webp"
-                    srcset="/images/Master-Jai-Bn-1-480.webp 480w, /images/Master-Jai-Bn-1-640.webp 640w, /images/Master-Jai-Bn-1-768.webp 768w, /images/Master-Jai-Bn-1-960.webp 960w, /images/Master-Jai-Bn-1-1200.webp 1200w"
-                    sizes="100vw"
-                    alt="GET YOUR EX LOVE BACK"
-                    width="1920"
-                    height="1080"
-                    loading="eager"
-                    fetchpriority="high"
-                    decoding="async"
-                  />
-                </picture>
-              </div>
-            </section>
-          </div>
-        </main>
+        <div class="skeleton-hero">
+          <picture>
+            <img
+              class="skeleton-img"
+              src="/images/Master-Jai-Bn-1.webp"
+              srcset="/images/Master-Jai-Bn-1-480.webp 480w, /images/Master-Jai-Bn-1-640.webp 640w, /images/Master-Jai-Bn-1-768.webp 768w, /images/Master-Jai-Bn-1-960.webp 960w, /images/Master-Jai-Bn-1-1200.webp 1200w"
+              sizes="100vw"
+              alt="GET YOUR EX LOVE BACK"
+              width="1920"
+              height="1080"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </picture>
+        </div>
       </div>
-    </div>
+      <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

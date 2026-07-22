@@ -25,10 +25,27 @@ const ScrollToTop = () => {
   return null;
 };
 
+const RemoveSkeleton = () => {
+  useEffect(() => {
+    // Remove the LCP skeleton after a brief delay to ensure React has painted
+    const timer = setTimeout(() => {
+      const skeleton = document.getElementById('lcp-skeleton');
+      if (skeleton) {
+        skeleton.style.opacity = '0';
+        skeleton.style.transition = 'opacity 0.5s ease-out';
+        setTimeout(() => skeleton.remove(), 500);
+      }
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+  return null;
+};
+
 function App() {
   return (
     <Router>
       <ScrollToTop />
+      <RemoveSkeleton />
       <div className="app-container">
         <div className="cosmic-bg"></div>
         <Navbar />
