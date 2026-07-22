@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Info, FileText, Briefcase, MapPin, Home } from 'lucide-react';
 
 const InstagramIcon = () => (
@@ -112,22 +111,13 @@ const Navbar = () => {
                   <span>{item.name}</span>
                   
                   {isTabActive && (
-                    <motion.div
-                      layoutId="lamp"
-                      className="tubelight-lamp-container"
-                      initial={false}
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 30,
-                      }}
-                    >
+                    <div className="tubelight-lamp-container active">
                       <div className="tubelight-lamp-base">
                         <div className="tubelight-blur-1" />
                         <div className="tubelight-blur-2" />
                         <div className="tubelight-blur-3" />
                       </div>
-                    </motion.div>
+                    </div>
                   )}
                 </Link>
               </div>
